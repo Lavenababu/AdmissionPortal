@@ -1,5 +1,5 @@
 body {
-    background-color: #9f9da7;
+    background-color: #a8a6a4;
     font-size: 1.6rem;
     font-family: "Open Sans", sans-serif;
     color: #2b3e51;
@@ -32,6 +32,7 @@ a:active:hover {
   color: #329dd5;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  font-size: 103%;
 }
 
 #login-form {
@@ -92,7 +93,6 @@ input[type="submit"] {
   font-size: 18px;
   position: relative;
   display: inline-block;
-  cursor: pointer;
   text-align: center;
 }
 input[type="submit"]:hover {
@@ -103,7 +103,7 @@ input[type="submit"]:hover {
   transition: all 0.2s ease;
 }
 
-#forgot-pass {
+#forgot-pass, #back {
   background-color: none;
   color: #8a8b8e;
   font-size: 14px;

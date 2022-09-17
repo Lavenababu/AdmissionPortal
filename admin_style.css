@@ -1,0 +1,84 @@
+body {
+    
+    background-color: #a8a6a4;
+    /* font-size: 1.6rem; */
+    font-family: "Open Sans", sans-serif;
+    color: #000;
+  }
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  #admin {
+    background-color: #fff;
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+    padding: 20px 0 0 0;
+    border-radius: 4px;
+    box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
+  }
+
+
+  .table-style {
+    border-collapse: collapse;
+    margin: 25px 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    width: 75%;
+}
+.table-style th {
+    background-color: #009879;
+    color: #ffffff;
+    /* text-align: left; */
+}
+.table-style th,
+.table-style td {
+    padding: 12px 15px;
+    text-align: left;
+}
+.table-style tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table-style tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table-style tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+/* .table-style tbody :active {
+    font-weight: bold;
+    color: #009879;
+} */
+
+.view-btn {
+    border: none;
+    display: block;
+    background-color: #009879;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    font-size: 15px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.view-btn:hover {
+    background-color: #fff;
+    color: #009879;
+    border: 2px solid #009879;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+
+
+/* select a word u want to change in multiple places and press ctrl + shift + L */
