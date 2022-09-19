@@ -1,3 +1,7 @@
+<?php
+require 'dbcon.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +11,11 @@
     
     <link rel="stylesheet" href="admission_style.css">
 
-    <title>Addmission Form </title> 
+    <title>Student View </title> 
 </head>
 <body>
     <div class="container">
-        <header>Admission form</header>
+        <header>Student View Details</header>
 
         <form action="#">
             <div class="form first">
