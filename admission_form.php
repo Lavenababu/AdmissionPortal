@@ -46,7 +46,7 @@
 
                         <div class="input-field">
                             <label>Gender</label>
-                            <select required>
+                            <select name="gender" required>
                                 <option disabled selected>Select gender</option>
                                 <option>Male</option>
                                 <option>Female</option>
@@ -123,7 +123,7 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Address Type</label>
-                            <select>
+                            <select name="address_type">
                                 <option value="" disabled selected>Type of address</option>
                                 <option value="">Permanent</option>
                                 <option value="">Temporary</option>
@@ -132,27 +132,27 @@
 
                         <div class="input-field">
                             <label>Nationality</label>
-                            <input type="text" placeholder="Enter nationality" required>
+                            <input type="text" name="nationality" placeholder="Enter nationality" required>
                         </div>
 
                         <div class="input-field">
                             <label>State</label>
-                            <input type="text" placeholder="Enter your state" required>
+                            <input type="text" name="state" placeholder="Enter your state" required>
                         </div>
 
                         <div class="input-field">
                             <label>District</label>
-                            <input type="text" placeholder="Enter your district" required>
+                            <input type="text" name="district" placeholder="Enter your district" required>
                         </div>
 
                         <div class="input-field">
                             <label>Area</label>
-                            <input type="text" placeholder="Enter your area" required>
+                            <input type="text" name="area" placeholder="Enter your area" required>
                         </div>
 
                         <div class="input-field">
                             <label>Building Name</label>
-                            <input type="text" placeholder="Enter Building name" required>
+                            <input type="text" name="building_name" placeholder="Enter Building name" required>
                         </div>
                     </div>
                 </div>
@@ -163,32 +163,32 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Father Name</label>
-                            <input type="text" placeholder="Enter father name" required>
+                            <input type="text" name="father_name" placeholder="Enter father name" required>
                         </div>
 
                         <div class="input-field">
                             <label>Mother Name</label>
-                            <input type="text" placeholder="Enter mother name" required>
+                            <input type="text" name="mother_name" placeholder="Enter mother name" required>
                         </div>
 
                         <div class="input-field">
                             <label>Number of Siblings</label>
-                            <input type="number" placeholder="Enter no. of Siblings" required>
+                            <input type="number" name="sibblings_no" placeholder="Enter no. of Siblings" required>
                         </div>
 
                         <div class="input-field">
                             <label>Father's Mobile Number</label>
-                            <input type="number" placeholder="Enter father's mobile number" >
+                            <input type="number" name="father_contact" placeholder="Enter father's mobile number" >
                         </div>
 
                         <div class="input-field">
                             <label>Mother's Mobile Number</label>
-                            <input type="number" placeholder="Enter mother's mobile number">
+                            <input type="number" name="mother_contact" placeholder="Enter mother's mobile number">
                         </div>
 
                         <div class="input-field">
                             <label>Telephone Number</label>
-                            <input type="number" placeholder="Enter telephone number">
+                            <input type="number" name="telephone" placeholder="Enter telephone number">
                         </div>
                     </div>
 

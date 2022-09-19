@@ -84,11 +84,32 @@ if(isset($_POST['form_btn']))
     $dob = mysqli_real_escape_string($con, $_POST['dob']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $mobileno = mysqli_real_escape_string($con, $_POST['mobileno']);
+    $gender = mysqli_real_escape_string($con, $_POST['gender']);
     $class = mysqli_real_escape_string($con, $_POST['class']);
 
-    $query = "INSERT INTO personal_details (name,dob,email,mobileno,class) VALUES ('$name','$dob','$email','$mobileno','$class')";
+    $query_personal = "INSERT INTO personal_details (name,dob,email,mobileno,gender,class) VALUES ('$name','$dob','$email','$mobileno','$gender','$class')";
 
-    $query_run = mysqli_query($con, $query);
+    $address_type = mysqli_real_escape_string($con, $_POST['address_type']);
+    $nationality = mysqli_real_escape_string($con, $_POST['nationality']);
+    $state = mysqli_real_escape_string($con, $_POST['state']);
+    $district = mysqli_real_escape_string($con, $_POST['district']);
+    $area = mysqli_real_escape_string($con, $_POST['area']);
+    $building_name = mysqli_real_escape_string($con, $_POST['building_name']);
+
+    $query_address = "INSERT INTO address_details (address_type,nationality,state,district,area,building_name) VALUES ('$address_type','$nationality','$state','$district','$area','$building_name')";
+
+    $father_name = mysqli_real_escape_string($con, $_POST['father_name']);
+    $mother_name = mysqli_real_escape_string($con, $_POST['mother_name']);
+    $sibblings_no = mysqli_real_escape_string($con, $_POST['sibblings_no']);
+    $father_contact = mysqli_real_escape_string($con, $_POST['father_contact']);
+    $mother_contact = mysqli_real_escape_string($con, $_POST['mother_contact']);
+    $telephone = mysqli_real_escape_string($con, $_POST['telephone']);
+
+    $query_family = "INSERT INTO family_details (father_name,mother_name,sibblings_no,father_contact,mother_contact,telephone) VALUES ('$father_name','$mother_name','$sibblings_no','$father_contact','$mother_contact','$telephone')";
+
+    $query_run = mysqli_query($con, $query_personal);
+    $query_run_add = mysqli_query($con, $query_address);
+    $query_run_fam = mysqli_query($con, $query_family);
     if($query_run)
     {
         $_SESSION['message'] = "Your form is submitted sucessfully!";
