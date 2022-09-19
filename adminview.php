@@ -56,23 +56,6 @@
                     }
                 ?>
 
-                <!-- <tr>
-                    <td>1</td>
-                    <td>Maria Anders</td>
-                    <td>maria@gmail.com</td>
-                    <td><button class="view-btn">View</button></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Francisco Chang</td>
-                    <td>francisco@gmail.com</td>
-                    <td><button class="view-btn">View</button></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Angela Philip</td>
-                    <td>angela@gmail.com</td>
-                    <td><button class="view-btn">View</button></td> -->
                 </tr>
             </tbody>
         </table><br><br>

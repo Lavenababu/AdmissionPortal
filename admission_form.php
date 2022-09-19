@@ -109,7 +109,7 @@
                         </div>
                     </div>
 
-                    <button class="nextBtn" name="form_btn">
+                    <button class="nextBtn">
                         <span class="btnText">Next</span>
                         <i class="uil uil-navigator"></i>
                     </button>
@@ -197,7 +197,7 @@
                             <span class="btnText">Back</span>
                         </div>
                         
-                        <button class="submit" >
+                        <button class="submit" name="form_btn">
                             <span class="btnText" onclick="">Submit</span>
                         </button>
                     </div>
