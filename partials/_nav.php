@@ -18,10 +18,16 @@
         <li class="nav-item">
           <a class="nav-link" href="/AdmissionPortal/adminview.php">AdminPanel</a>
         </li>
+        <!-- <li class="nav-item" style="margin-left = 50px;">
+          <a class="nav-link" href="#">Profile</a>
+        </li> -->
       </ul>
-      <form class="d-flex" role="search">
+      <!-- <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
+        <li class="nav-item" style="margin-left = 50px;">
+          <a class="nav-link" href="#">Profile</a>
+        </li> -->
       </form>
     </div>
   </div>

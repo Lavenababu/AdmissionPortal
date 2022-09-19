@@ -9,13 +9,16 @@
   <title>HTML5 Login Form with validation Example</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-  <link rel="stylesheet" href="./admin_style.css">
+  <link rel="stylesheet" href="./admin_style.css?v=7">
 </head>
 <body> 
     <?php/* require 'partials/_nav.php' */?>  
     <?php include ('partials/_message.php'); ?>
     <div id="admin">
+    
+        <a href="login.php" class="next">&laquo; Back</a>
         <h2>Admin Panel</h2>
+
         <table class="table-style">
             <thead>
                 <tr>
