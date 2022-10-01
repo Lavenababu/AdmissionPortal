@@ -36,7 +36,7 @@ if(isset($_POST['login_btn']))
         elseif($_SESSION['auth_role'] == '0') //user
         {
             $_SESSION['message'] = "You are Logged In"; 
-            header("Location: http://localhost/AdmissionPortal/admission_form.php");
+            header("Location: http://localhost/AdmissionPortal/home_page.php");
             exit(0);
         }
 
@@ -53,6 +53,17 @@ if(isset($_POST['login_btn']))
     }
 }
 
+if(isset($_POST['logout_btn']))
+{
+    unset($_SESSION['auth']);
+    unset($_SESSION['auth_role']);
+    unset($_SESSION['auth_user']);
+
+    $_SESSION['message'] = "Logged Out Sucessfully";
+    header("Location: http://localhost/AdmissionPortal/login.php");
+    exit(0);
+}
+
 if(isset($_POST['register_student']))
 {
     $name = mysqli_real_escape_string($con, $_POST['name']);
@@ -61,21 +72,38 @@ if(isset($_POST['register_student']))
     $pass = mysqli_real_escape_string($con, $_POST['pass']);
     $c_pass = mysqli_real_escape_string($con, $_POST['c_pass']);
 
-    $query = "INSERT INTO users (name,email,username,password,confirmPass) VALUES ('$name','$email','$username','$pass','$c_pass')";
+    if($pass == $c_pass){
+        $checkemail = "SELECT email FROM users WHERE email='$email'";
+        $checkemail_run = mysqli_query($con, $checkemail);
 
-    $query_run = mysqli_query($con, $query);
-    if($query_run)
-    {
-        $_SESSION['message'] = "Registration is Successful!";
+        if(mysqli_num_rows($checkemail_run) > 0){
+            $_SESSION['message'] = "Email already exists";
+            header("Location: http://localhost/AdmissionPortal/register.php");
+            exit(0);
+        }else{
+            $query = "INSERT INTO users (name,email,username,password) VALUES ('$name','$email','$username','$pass')";
+
+            $query_run = mysqli_query($con, $query);
+            if($query_run)
+            {
+                $_SESSION['message'] = "Registration is Successful!";
+                header("Location: http://localhost/AdmissionPortal/login.php");
+                exit(0);
+            }
+            else
+            {
+                $_SESSION['message'] = "Registration failed!";
+                header("Location: http://localhost/AdmissionPortal/register.php");
+                exit(0);
+            }
+        }
+
+    }else{
+        $_SESSION['message'] = "Password and Confirm Password does not Match";
         header("Location: http://localhost/AdmissionPortal/register.php");
         exit(0);
     }
-    else
-    {
-        $_SESSION['message'] = "Registration failed!";
-        header("Location: http://localhost/AdmissionPortal/register.php");
-        exit(0);
-    }
+
 }
 
 if(isset($_POST['form_btn']))

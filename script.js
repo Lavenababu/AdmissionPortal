@@ -15,3 +15,7 @@ nextBtn.addEventListener("click", ()=> {
 })
 
 backBtn.addEventListener("click", () => form.classList.remove('secActive'));
+
+const email =document.getElementById('email');
+const username =document.getElementById('username');
+
