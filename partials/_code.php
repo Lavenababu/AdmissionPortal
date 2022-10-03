@@ -81,7 +81,8 @@ if(isset($_POST['register_student']))
             header("Location: http://localhost/AdmissionPortal/register.php");
             exit(0);
         }else{
-            $query = "INSERT INTO users (name,email,username,password) VALUES ('$name','$email','$username','$pass')";
+            $hash = password_hash($pass, PASSWORD_DEFAULT); //added hash 
+            $query = "INSERT INTO users (name,email,username,password) VALUES ('$name','$email','$username','$hash')";
 
             $query_run = mysqli_query($con, $query);
             if($query_run)
