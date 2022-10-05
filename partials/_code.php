@@ -1,5 +1,6 @@
 <?php
 session_start();
+$login = false;
 require '_dbconnect.php';
 
 if(isset($_POST['login_btn']))
@@ -7,8 +8,16 @@ if(isset($_POST['login_btn']))
     $username = mysqli_real_escape_string($con, $_POST['username']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
 
-    $query = "SELECT * FROM users where username='$username' and password='$password' LIMIT 1";
+    $query = "SELECT * FROM users where username='$username' and password='$password'";
     $query_run = mysqli_query($con, $query);
+    $num = mysqli_num_rows($query_run);
+    if($num == 1){
+        while($row=mysqli_fetch_assoc($query_run)){
+            if(password_verify($password,$row['password'])){
+                $login=true;
+            }
+        }
+    }
 
     if(mysqli_num_rows($query_run) > 0)
     {
@@ -47,7 +56,7 @@ if(isset($_POST['login_btn']))
     }
     else
     {
-        $_SESSION['message'] = "Invalid Email or Password"; //message to show
+        $_SESSION['message'] = "Invalid Username or Password"; //message to show
         header("Location: http://localhost/AdmissionPortal/login.php");
         exit(0);
     }
@@ -60,7 +69,7 @@ if(isset($_POST['logout_btn']))
     unset($_SESSION['auth_user']);
 
     $_SESSION['message'] = "Logged Out Sucessfully";
-    header("Location: http://localhost/AdmissionPortal/login.php");
+    header("Location: http://localhost/AdmissionPortal/home_page.php");
     exit(0);
 }
 
