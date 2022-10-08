@@ -1,29 +1,47 @@
 /* style sheet for admin view */
 body {
-    
-    background-color: #a8a6a4;
-    /* font-size: 1.6rem; */
-    font-family: "Open Sans", sans-serif;
-    color: #000;
-  }
-  h2 {
-    font-size: 1.6rem;
-    font-weight: 300;
-    text-align: center;
+
+  background-color: #a8a6a4;
+  font-family: "Open Sans", sans-serif;
+  color: #000;
 }
-.next {
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.btn {
   text-decoration: none;
   display: inline-block;
   padding: 8px 16px;
   background-color: #009879;
   color: white;
-  float: right;
+  float: left;
   margin-right: 15px;
 }
-.next:hover {
+
+.btn:hover {
   background-color: #fff;
-  border: 2px solid #009879;
+  border: 1px solid #009879;
   color: #009879;
+}
+
+.back-btn{
+  float: right;
+}
+
+.view-btn{
+  background: rgb(0, 255, 76);
+}
+
+.delete-btn{
+  background: rgb(255, 0, 0);
+}
+
+.update-btn{
+  background: rgb(3, 213, 255);
 }
 
 #admin {
@@ -37,85 +55,65 @@ body {
 }
 
 
-  .table-style {
-    border-collapse: collapse;
-    margin: 25px 0;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    width: 75%;
+.table-style {
+  border-collapse: collapse;
+  margin: 25px 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width: 75%;
 }
+
 .table-style th {
-    background-color: #009879;
-    color: #ffffff;
-    /* text-align: left; */
+  background-color: #009879;
+  color: #ffffff;
 }
+
 .table-style th,
 .table-style td {
-    padding: 12px 15px;
-    text-align: left;
+  padding: 12px 15px;
+  text-align: left;
 }
+
 .table-style tbody tr {
-    border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
 }
 
 .table-style tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+  background-color: #f3f3f3;
 }
 
 .table-style tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+  border-bottom: 2px solid #009879;
 }
 
-
-.view-btn {
-    border: none;
-    display: block;
-    background-color: #009879;
-    color: #fff;
-    cursor: pointer;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-    font-size: 15px;
-    position: relative;
-    display: inline-block;
-    text-align: center;
+input[type="submit"] {
+  border: none;
+  display: block;
+  background-color: #009879;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin-left: 10px;
 }
-.view-btn:hover {
-    background-color: #fff;
-    color: #009879;
-    border: 2px solid #009879;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
- }
 
-  input[type="submit"] {
-    border: none;
-    display: block;
-    background-color: #009879;
-    color: #fff;
-    cursor: pointer;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-    font-size: 15px;
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    margin-left: 10px;
-  }
-  input[type="submit"]:hover {
-    background-color: #fff;
-    color: #009879;
-    border: 2px solid #009879;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-  } 
+input[type="submit"]:hover {
+  background-color: #fff;
+  color: #009879;
+  border: 2px solid #009879;
+}
 
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-  background-color: #009879  !important;
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: #009879 !important;
 }
 
 /* select a word u want to change in multiple places and press ctrl + shift + L */
