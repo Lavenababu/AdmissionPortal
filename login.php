@@ -25,7 +25,7 @@
             <p><a href="#" style="text-decoration: none;">Forgot Password?</a></p>
           </div>
           <p>
-          <input type="submit" name="login_btn" id="login" value="Login">
+          <input type="submit" name="login" id="login" value="Login">
           </p>
         </form>
         <div id="create-acc">

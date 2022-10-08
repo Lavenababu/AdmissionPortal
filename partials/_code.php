@@ -3,7 +3,7 @@ session_start();
 $login = false;
 require '_dbconnect.php';
 
-if(isset($_POST['login_btn']))
+if(isset($_POST['login']))
 {
     $username = mysqli_real_escape_string($con, $_POST['username']);
     $password = mysqli_real_escape_string($con, $_POST['password']);

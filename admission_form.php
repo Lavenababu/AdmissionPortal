@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="admission_style.css">
+    <link rel="stylesheet" href="admission_style.css?v3">
 
     <title>Addmission Form </title> 
 </head>
@@ -19,7 +19,18 @@
         <header>Admission form</header>
 
         <form action="partials/_code.php" method="POST">
-            <div class="form first">
+
+            <!-- Progress Bar -->
+            <div class="progressbar">
+                <div class="progress" id="progress"></div>
+                <div class="progress-step progress-step-active" data-title="Part1"></div>
+                <div class="progress-step" data-title="Part2"></div>
+                <div class="progress-step" data-title="Part3"></div>
+                <div class="progress-step" data-title="Part4"></div>
+            </div>
+            <!-- End of Progress Bar -->
+
+            <div class="form first form-step-active">
                 <div class="details personal">
                     <span class="title">Personal Details</span>
 
@@ -46,7 +57,7 @@
 
                         <div class="input-field">
                             <label>Gender</label>
-                            <select name="gender" required>
+                            <!-- <select name="gender" required> -->
                                 <option disabled selected>Select gender</option>
                                 <option>Male</option>
                                 <option>Female</option>

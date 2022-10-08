@@ -12,19 +12,17 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>
-  <h3>Don Bosco Institute Of Technology</h3>
+  <h3><img src="Dbit_logo.png" width="100" height="100">Don Bosco Institute Of Technology</h3>
 
   <?php require 'partials/_nav.php' ?>
   <?php include ('partials/_message.php'); ?>
   
-  <h3>hello</h3><br><br><br>
-  <h3>hello</h3><br><br><br>
-  <h3>hello</h3><br><br><br>
-  <h3>hello</h3><br><br><br>
-  <h3>hello</h3><br><br><br>
-  <h3>hello</h3><br><br><br>
-  <h3>hello</h3><br><br><br>
-  <h3>hello</h3><br><br><br>
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <h1>Admission Portal of <br><span>Don Bosco Institute Of Technology</span></h1>
+      <!-- <h2>We are team of talented designers making websites with Bootstrap</h2> -->
+    </div>
+  </section>
 
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
