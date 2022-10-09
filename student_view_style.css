@@ -15,6 +15,28 @@
     box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
 }
 
+.header{
+    display: flex;
+    padding-top: 2rem;
+}
+.header h2{
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+}
+.header button{
+    margin-right: 1.3rem;
+    float: right;
+    width: 5rem;
+    height: 1.5rem;
+    border: 1px solid;
+    border-radius: 10px;
+}
+.header button:hover{
+    background: #fff;
+    transform: scale(1.1);
+}
 .top-container{
     display: flex;
     flex-direction: column;
@@ -71,12 +93,59 @@ form .fields .input-field{
 }
 .other-details{
     padding-top: 0.8rem;
+    margin-bottom: 10rem;
     display: flex;
     justify-content: center;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
     margin: 1rem 2rem;
     width: 100%;
     height: 60vh;
     border: 1px solid lightblue;
+    border-radius: 5px;
+}
+
+.other-details form .fields{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+form .fields .input-detail{
+    display: flex;
+    /* width: calc(100% /3 - 1rem); */
+    width: 22rem;
+    padding: 1rem 2rem;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+.input-detail label{
+    margin-right: auto;
+    font-size: 1.2rem;
+    color: #2e2e2e;
+}
+.input-detail input{
+    border: 1px solid;
+    border-radius: 5px;
+    height: 1.7rem;
+}
+
+.indentity .input-file{
+    display: flex;
+    /* width: calc(100% /3 - 1rem); */
+    padding: 1rem 2rem;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+.indentity .input-file label{
+    font-size: 1.3rem;
+}
+.indentity .input-file button{
+    width: 10rem;
+    height: 1.5rem;
+    border: 1px solid;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+}
+.indentity .input-file button:hover{
+    background: #fff;
+    transform: scale(1.1);
 }
