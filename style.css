@@ -66,6 +66,7 @@ input {
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"] {
   width: 100%;
   padding: 0 0 0 10px;
@@ -194,8 +195,6 @@ label{
   left: -35px;
   content: "✔";
 }
-
-/* Add a red text color and an "x" when the requirements are wrong */
 .invalid {
   color: red;
 }

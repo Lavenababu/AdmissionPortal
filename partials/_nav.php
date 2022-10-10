@@ -1,13 +1,14 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    .navbar {
-      overflow: hidden;
-    }
+      .navbar {
+        height: 60px;
+      }
     .sticky {
       position: fixed;
       top: 0;
       width: 100%;
+      color: black;
     }
     .sticky + .content {
      padding-top: 60px;
@@ -48,6 +49,15 @@
           </ul>
         </li>
 
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="/AdmissionPortal/login.php">Login</a>
+        </li>
+        <li>
+          <form action="partials/_code.php" method="POST">
+            <button type="submit" name="logout_btn" class="nav-item">Logout</button>
+          </form>
+        </li> -->
+
         <?php else : ?>
 
         <li class="nav-item">
@@ -59,6 +69,10 @@
         </li>
 
         <?php endif; ?>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
 
       </ul>
 

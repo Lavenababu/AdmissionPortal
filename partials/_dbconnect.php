@@ -9,6 +9,3 @@ if (!$con){
     die("Error". mysqli_connect_error());
 }
 
-
-
-

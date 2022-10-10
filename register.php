@@ -29,6 +29,11 @@
           </p> -->
 
           <div class="form-control">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Name" required><i class="validation"></i>
+          </div>
+
+          <div class="form-control">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="example@email.com" required><i class="validation"></i>
           </div>
@@ -42,6 +47,7 @@
             <label for="password">Password</label>
             <input type="password" id="pass" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" required><i class="validation"></i>
             <div id="message">
+              <h6><b>Your password must contain:<b></h6>
               <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
               <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
               <p id="number" class="invalid">A <b>number</b></p>
