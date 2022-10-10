@@ -21,13 +21,13 @@
         <form action="partials/_code.php" method="POST">
 
             <!-- Progress Bar -->
-            <div class="progressbar">
+            <!-- <div class="progressbar">
                 <div class="progress" id="progress"></div>
                 <div class="progress-step progress-step-active" data-title="Part1"></div>
                 <div class="progress-step" data-title="Part2"></div>
                 <div class="progress-step" data-title="Part3"></div>
                 <div class="progress-step" data-title="Part4"></div>
-            </div>
+            </div> -->
             <!-- End of Progress Bar -->
 
             <div class="form first form-step-active">
@@ -57,7 +57,7 @@
 
                         <div class="input-field">
                             <label>Gender</label>
-                            <!-- <select name="gender" required> -->
+                            <select name="gender" required>
                                 <option disabled selected>Select gender</option>
                                 <option>Male</option>
                                 <option>Female</option>

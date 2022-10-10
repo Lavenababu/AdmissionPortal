@@ -109,7 +109,7 @@ body{
 .container form{
     position: relative;
     margin-top: 16px;
-    min-height: 700px; /*510*/
+    min-height: 510px;
     background-color: #fff;
     overflow: hidden;
 }
