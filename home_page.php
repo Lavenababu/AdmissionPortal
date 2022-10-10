@@ -40,6 +40,16 @@
      </div>
   </section>
 
+  <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Apply</h2>
+          <h3><span>Please fill in all the details carefully</span></h3>
+          <hr>
+          <a href="admission_form.php">Click here to apply!</a>
+          <hr>
+        </div></div></section>
 
 
       <!-- ======= Contact Section ======= -->
@@ -54,7 +64,7 @@
         <div class="row" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-6">
             <div class="info-box mb-4">
-              <i class="bx bx-map"></i>
+              <!-- <i class="bx bx-map"></i> -->
               <h3>Our Address</h3>
               <p>Premier Automobiles Road Opp. HDIL Premier Exotica, Kurla, Mumbai, Maharashtra 400070</p>
             </div>
@@ -114,19 +124,7 @@
       </div>
     </section>
     <!-- End Contact Section -->
-    <p>
-  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Link with href
-  </a>
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-bs-target
-  </button>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-  </div>
-</div>
+
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
