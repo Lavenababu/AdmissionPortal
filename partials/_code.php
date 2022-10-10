@@ -5,51 +5,51 @@ require '_dbconnect.php';
 
 if(isset($_POST['login']))
 {
-    // $email = mysqli_real_escape_string($con, $_POST['email']);
-    // $password = mysqli_real_escape_string($con, $_POST['password']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
 
-    // $query = "SELECT * FROM users where email='$email' and password='$password'";
-    // $query_run = mysqli_query($con, $query);
-    // $num = mysqli_num_rows($query_run);
-    // if($num == 1){
-    //     while($row=mysqli_fetch_assoc($query_run)){
-    //         if(password_verify($password,$row['password'])){
-    //             $login=true;
-    //         }
-    //     }
-    // }
+    $query = "SELECT * FROM users where email='$email' and password='$password'";
+    $query_run = mysqli_query($con, $query);
+    $num = mysqli_num_rows($query_run);
+    if($num == 1){
+        while($row=mysqli_fetch_assoc($query_run)){
+            if(password_verify($password,$row['password'])){
+                $login=true;
+            }
+        }
+    }
 
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // $query = "SELECT * FROM users where username='$username' and password='$password'";
+    $query = "SELECT * FROM users where username='$username' and password='$password'";
     $query = "SELECT ID, username, password from users where username = '$username'"; //changed over here 
     $query_run = mysqli_query($con, $query);
     $num = mysqli_num_rows($query_run);
 
-//     if($num > 0){
-//         while($row=mysqli_fetch_assoc($query_run)){
-//         if (password_verify($password, $row['password'])){ 
-//             // $login = true;
-//             // session_start();
-//             // $_SESSION['username'] = $username;
-//             // $_SESSION['password'] = $password;
-//             // header("location: home_page.php");
-//         } 
-//         else{
-//             $showError = "Invalid Credentials";
-//         }
-//     }
-// }
+    if($num > 0){
+        while($row=mysqli_fetch_assoc($query_run)){
+        if (password_verify($password, $row['password'])){ 
+            // $login = true;
+            // session_start();
+            // $_SESSION['username'] = $username;
+            // $_SESSION['password'] = $password;
+            // header("location: home_page.php");
+        } 
+        else{
+            $showError = "Invalid Credentials";
+        }
+    }
+}
 
-    // if($num > 0){
-    //     $data = $query_run->fetch_array();
-    //     if(password_verify($password, $data['password'])){
+    if($num > 0){
+        $data = $query_run->fetch_array();
+        if(password_verify($password, $data['password'])){
             
-    //     }
-    // }else{
-    //     $showError = "Invalid Credentials";
-    // }
+        }
+    }else{
+        $showError = "Invalid Credentials";
+    }
 
     if(mysqli_num_rows($query_run) > 0)
     {
@@ -82,9 +82,9 @@ if(isset($_POST['login']))
         }
 
 
-        // $_SESSION['message'] = "You are Logged In Successfully"; //message to show
-        // header("Location: http://localhost/AdmissionPortal/login.php");
-        // exit(0);
+        $_SESSION['message'] = "You are Logged In Successfully"; //message to show
+        header("Location: http://localhost/AdmissionPortal/login.php");
+        exit(0);
     }
     else
     {
