@@ -1,49 +1,22 @@
 <?php
 session_start();
-// $login = false;
 require '_dbconnect.php';
 
 if(isset($_POST['login']))
 {
-
-//     if($num > 0){
-//         while($row=mysqli_fetch_assoc($query_run)){
-//         if (password_verify($password, $row['password'])){ 
-//             // $login = true;
-//             // session_start();
-//             // $_SESSION['username'] = $username;
-//             // $_SESSION['password'] = $password;
-//             // header("location: home_page.php");
-//         } 
-//         else{
-//             $showError = "Invalid Credentials";
-//         }
-//     }
-// }
-
-    // if($num > 0){
-    //     $data = $query_run->fetch_array();
-    //     if(password_verify($password, $data['password'])){
-    //         header("Location: http://localhost/AdmissionPortal/adminview.php");
-    //         $_SESSION['message'] = "Welcome to Admin Panel"; 
-    //         exit(0);
-    //     }
-    // }else{
-    //     $_SESSION['message'] = "Error"; 
-    // }
-
 
 $username = mysqli_real_escape_string($con, $_POST['username']);
 $password = mysqli_real_escape_string($con, $_POST['password']);
 
 $query = "SELECT * FROM users where username='$username'";
 $query_run = mysqli_query($con, $query);
+$num = 1;
 
     if($num > 0){
         $data = $query_run->fetch_array();
         if(password_verify($password, $data['password'])){
 
-            header("Location: http://localhost/AdmissionPortal/adminview.php");
+            header("Location: http://localhost/AdmissionPortal/home_page.php");
             $_SESSION['message'] = "Welcome to Admin Panel"; 
             exit(0);
         
@@ -78,7 +51,7 @@ if(mysqli_num_rows($query_run) > 0)
     elseif($_SESSION['auth_role'] == '0') //user
     {
         $_SESSION['message'] = "You are Logged In"; 
-        header("Location: http://localhost/AdmissionPortal/admission_form.php");
+        header("Location: http://localhost/AdmissionPortal/home_page.php");
         exit(0);
     }
 
