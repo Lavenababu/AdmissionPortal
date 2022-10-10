@@ -29,10 +29,6 @@
           <a class="nav-link active" aria-current="page" href="/AdmissionPortal/home_page.php">Home</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="/AdmissionPortal/adminview.php">AdminPanel</a>
-        </li>
-
         <?php if(isset($_SESSION['auth_user'])) : ?>
 
         <li class="nav-item dropdown">

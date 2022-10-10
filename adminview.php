@@ -16,7 +16,7 @@ require 'partials/_dbconnect.php'
     <?php include('partials/_message.php'); ?>
     <div id="admin">
 
-        <a href="login.php" class="btn back-btn">&laquo; Back</a>
+        <a href="home_page.php" class="btn back-btn">&laquo; Back</a>
         <h2>Admin Panel</h2>
 
         <table class="table-style">
@@ -36,17 +36,17 @@ require 'partials/_dbconnect.php'
                 $query_run = mysqli_query($con, $query);
 
                 if (mysqli_num_rows($query_run) > 0) {
-                    foreach ($query_run as $usertable) {
+                    foreach ($query_run as $student) {
                 ?>
                         <tr>
-                            <td><?= $usertable['ID']; ?></td>
-                            <td><?= $usertable['name']; ?></td>
-                            <td><?= $usertable['email']; ?></td>
-                            <td><?= $usertable['username']; ?></td>
+                            <td><?= $student['ID']; ?></td>
+                            <td><?= $student['name']; ?></td>
+                            <td><?= $student['email']; ?></td>
+                            <td><?= $student['username']; ?></td>
                             <td>
-                                <a href="student-view.php=<?= $usertable['ID']; ?>" class="btn view-btn">View</a>
-                                <a href="student-view.php?id=<?= $usertable['ID']; ?>" class="btn delete-btn">Delete</a>
-                                <a href="student-view.php?id=<?= $usertable['ID']; ?>" class="btn update-btn">Update</a>
+                                <a href="student_view.php?id=<?= $student['ID']; ?>" class="btn view-btn">View</a>
+                                <a href="student_view.php?id=<?= $student['ID']; ?>" class="btn delete-btn">Delete</a>
+                                <a href="student-view.php?id=<?= $student['ID']; ?>" class="btn update-btn">Update</a>
                             </td>
 
                         </tr>

@@ -124,6 +124,7 @@ if(isset($_POST['register_student']))
 
 if(isset($_POST['form_btn']))
 {
+
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $dob = mysqli_real_escape_string($con, $_POST['dob']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
@@ -131,7 +132,10 @@ if(isset($_POST['form_btn']))
     $gender = mysqli_real_escape_string($con, $_POST['gender']);
     $class = mysqli_real_escape_string($con, $_POST['class']);
 
-    $query_personal = "INSERT INTO personal_details (name,dob,email,mobileno,gender,class) VALUES ('$name','$dob','$email','$mobileno','$gender','$class')";
+    $id = "SELECT ID FROM users where email='$email'";
+    $query_get_id = mysqli_query($con, $id);
+
+    $query_personal = "INSERT INTO personal_details (stu_id,fullname,dob,email,stu_mobile,gender,Branch) VALUES ('$id','$name','$dob','$email','$mobileno','$gender','$class')";
 
     $address_type = mysqli_real_escape_string($con, $_POST['address_type']);
     $nationality = mysqli_real_escape_string($con, $_POST['nationality']);
@@ -140,7 +144,7 @@ if(isset($_POST['form_btn']))
     $area = mysqli_real_escape_string($con, $_POST['area']);
     $building_name = mysqli_real_escape_string($con, $_POST['building_name']);
 
-    $query_address = "INSERT INTO address_details (address_type,nationality,state,district,area,building_name) VALUES ('$address_type','$nationality','$state','$district','$area','$building_name')";
+    $query_address = "INSERT INTO address_details (address_id,address_type,nationality,state,district,area,building_name) VALUES ('$id','$address_type','$nationality','$state','$district','$area','$building_name')";
 
     $father_name = mysqli_real_escape_string($con, $_POST['father_name']);
     $mother_name = mysqli_real_escape_string($con, $_POST['mother_name']);
@@ -149,7 +153,7 @@ if(isset($_POST['form_btn']))
     $mother_contact = mysqli_real_escape_string($con, $_POST['mother_contact']);
     $telephone = mysqli_real_escape_string($con, $_POST['telephone']);
 
-    $query_family = "INSERT INTO family_details (father_name,mother_name,sibblings_no,father_contact,mother_contact,telephone) VALUES ('$father_name','$mother_name','$sibblings_no','$father_contact','$mother_contact','$telephone')";
+    $query_family = "INSERT INTO family_details (family_id,father_name,mother_name,sibblings_no,father_contact,mother_contact,telephone) VALUES ('$id','$father_name','$mother_name','$sibblings_no','$father_contact','$mother_contact','$telephone')";
 
     $query_run = mysqli_query($con, $query_personal);
     $query_run_add = mysqli_query($con, $query_address);
@@ -167,4 +171,20 @@ if(isset($_POST['form_btn']))
         exit(0);
     }
 }
+
+// if(isset($_POST["submit"])){
+//     $title = $_POST["Upload Your Document"];
+//     $pname = rand(1000, 10000)."-".$_FILES["file"]["name"];
+//     $tname = $_FILES["files"]["tmp_name"];
+//     $uploads_dir = '/images';
+//     move_uploaded_file($tname, $uploads_dir.'/'.$pname);
+//     $query = "INSERT INTO fileup(title, image) VALUES('$title', '$pname')";
+
+//     if(mysqli_query($con, $query)){
+//         echo "File submitted";
+//     }
+//     else{
+//         echo "Error";
+//     }
+// }
 ?>

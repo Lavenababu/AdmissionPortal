@@ -10,7 +10,7 @@ require 'partials/_dbconnect.php'
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student details</title>
-    <link rel="stylesheet" href="student_view_style.css" />
+    <link rel="stylesheet" href="student_view_style.css?v2" />
     <!-- <link rel="stylesheet" href="admission_style.css"> -->
 </head>
 
@@ -51,51 +51,62 @@ require 'partials/_dbconnect.php'
                     <div class="fields">
                         <div class="input-field">
                             <label>Email</label>
-                            <input type="email" name="email" value="<?= $usertable['email']; ?>"/>
+                            <input type="email" name="email" value="<?= $usertable['email']; ?>" disabled>
                         </div>
 
                         <div class="input-field">
                             <label>Mobile Number</label>
-                            <input type="number" name="mobileno" value="<?= $usertable['stu_mobile']; ?>"/>
+                            <input type="number" name="mobileno" value="<?= $usertable['stu_mobile']; ?>" disabled>
                         </div>
 
                         <div class="input-field">
                             <label>Gender</label>
-                            <input type="text" name="gender" value="<?= $usertable['gender']; ?>">
+                            <input type="text" name="gender" value="<?= $usertable['gender']; ?>" disabled>
                         </div>
 
                         <div class="input-field">
                             <label>Branch</label>
-                            <input type="text" name="branch" value="<?= $usertable['mobile']; ?>">
+                            <input type="text" name="branch" value="<?= $usertable['Branch']; ?>" disabled>
                         </div>
                         <div class="input-field">
                             <label>HSC Marks</label>
-                            <input type="text" name="hscmarks" value="<?= $usertable['hscmarks']; ?>">
+                            <input type="text" name="hscmarks" disabled>
                         </div>
                         <div class="input-field">
                             <label>JEE/CET Marks</label>
                             <input type="text" name="jee">
                         </div>
+                        <?php }
+                            $query = "SELECT * FROM family_details";
+                            $query_run = mysqli_query($con, $query);
+                            if (mysqli_num_rows($query_run) > 0) {
+                                foreach ($query_run as $usertable) {
+                        ?>
                         <div class="input-field">
                             <label>Father's Name</label>
-                            <input type="text" name="fname">
+                            <input type="text" name="fname" value="<?= $usertable['father_name']; ?>" disabled>
                         </div>
                         <div class="input-field">
                             <label>Mother's Name</label>
-                            <input type="text" name="mname">
+                            <input type="text" name="mname" value="<?= $usertable['mother_name']; ?>" disabled>
                         </div>
                         <div class="input-field">
                             <label>Father's Number</label>
-                            <input type="text" name="mobilenumber">
+                            <input type="text" name="mobilenumber" value="<?= $usertable['father_contact']; ?>" disabled>
                         </div>
                         <div class="input-field">
                             <label>Mother's Number</label>
-                            <input type="text" name="telephone">
+                            <input type="text" name="mobilenumber" value="<?= $usertable['father_contact']; ?>" disabled>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
+        <?php }
+            $query = "SELECT * FROM address_details";
+            $query_run = mysqli_query($con, $query);
+            if (mysqli_num_rows($query_run) > 0) {
+                foreach ($query_run as $usertable) {?>
 
         <!-- Other details container -->
         <div class="other-details">
@@ -111,17 +122,18 @@ require 'partials/_dbconnect.php'
                 <div class="fields">
                     <div class="input-detail">
                         <label>State</label>
-                        <input type="">
+                        <input type="text" value="<?= $usertable['state']; ?>" disabled>
                     </div>
                     <div class="input-detail">
                         <label>District</label>
-                        <input type="">
+                        <input type="text" value="<?= $usertable['district']; ?>" disabled>
                     </div>
                     <div class="input-detail">
                         <label>Area</label>
-                        <input type="">
+                        <input type="text" value="<?= $usertable['area']; ?>" disabled>
                     </div>
                 </div>
+                <?php }}?>
                 <!-- All file related to admission -->
                 <div class="indentity">
                     <span class="title">
