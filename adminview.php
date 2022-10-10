@@ -44,7 +44,7 @@ require 'partials/_dbconnect.php'
                             <td><?= $usertable['email']; ?></td>
                             <td><?= $usertable['username']; ?></td>
                             <td>
-                                <a href="student-view.php?id=<?= $usertable['ID']; ?>" class="btn view-btn">View</a>
+                                <a href="student-view.php=<?= $usertable['ID']; ?>" class="btn view-btn">View</a>
                                 <a href="student-view.php?id=<?= $usertable['ID']; ?>" class="btn delete-btn">Delete</a>
                                 <a href="student-view.php?id=<?= $usertable['ID']; ?>" class="btn update-btn">Update</a>
                             </td>

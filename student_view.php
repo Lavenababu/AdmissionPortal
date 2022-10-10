@@ -1,3 +1,7 @@
+<?php
+require 'partials/_dbconnect.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +15,14 @@
 </head>
 
 <body>
+<?php
+    $query = "SELECT * FROM personal_details";
+    $query_run = mysqli_query($con, $query);
+    if (mysqli_num_rows($query_run) > 0) {
+        foreach ($query_run as $usertable) {
+?>
+
+
     <div class="header">
         <h2>Student Information details</h2>
         <button>Back</button>
@@ -21,11 +33,11 @@
             <img src="team-1.jpg" alt="photo" class="photo" />
             <hr width="80%" />
             <br />
-            <h2 class="fullname">Name</h2>
+            <h2 class="fullname">Name: <?= $usertable['fullname']; ?></h2>
             <br />
             <hr width="80%" />
             <br />
-            <h3>D.O.B</h3>
+            <h3>D.O.B: <?= $usertable['dob']; ?></h3>
         </div>
 
         <!-- Container with personal details -->
@@ -39,26 +51,26 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Email</label>
-                            <input type="email" name="email" />
+                            <input type="email" name="email" value="<?= $usertable['email']; ?>"/>
                         </div>
 
                         <div class="input-field">
                             <label>Mobile Number</label>
-                            <input type="number" name="mobileno" />
+                            <input type="number" name="mobileno" value="<?= $usertable['stu_mobile']; ?>"/>
                         </div>
 
                         <div class="input-field">
                             <label>Gender</label>
-                            <input type="text" name="gender">
+                            <input type="text" name="gender" value="<?= $usertable['gender']; ?>">
                         </div>
 
                         <div class="input-field">
                             <label>Branch</label>
-                            <input type="text" name="branch">
+                            <input type="text" name="branch" value="<?= $usertable['mobile']; ?>">
                         </div>
                         <div class="input-field">
                             <label>HSC Marks</label>
-                            <input type="text" name="hscmarks">
+                            <input type="text" name="hscmarks" value="<?= $usertable['hscmarks']; ?>">
                         </div>
                         <div class="input-field">
                             <label>JEE/CET Marks</label>
@@ -73,11 +85,11 @@
                             <input type="text" name="mname">
                         </div>
                         <div class="input-field">
-                            <label>Father's/Mother's Number</label>
+                            <label>Father's Number</label>
                             <input type="text" name="mobilenumber">
                         </div>
                         <div class="input-field">
-                            <label>Telephone Number</label>
+                            <label>Mother's Number</label>
                             <input type="text" name="telephone">
                         </div>
                     </div>
@@ -143,6 +155,12 @@
             </form>
         </div>
     </div>
+    <?php
+        }
+    } else{
+        echo "<h5>Student has not filled the admission form</h5>";
+    }
+    ?>
 </body>
 
 </html>
