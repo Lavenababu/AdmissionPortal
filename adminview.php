@@ -39,14 +39,14 @@ require 'partials/_dbconnect.php'
                     foreach ($query_run as $student) {
                 ?>
                         <tr>
-                            <td><?= $student['ID']; ?></td>
-                            <td><?= $student['name']; ?></td>
-                            <td><?= $student['email']; ?></td>
-                            <td><?= $student['username']; ?></td>
+                            <td><?= $student['u_ID']; ?></td>
+                            <td><?= $student['u_name']; ?></td>
+                            <td><?= $student['u_email']; ?></td>
+                            <td><?= $student['u_username']; ?></td>
                             <td>
-                                <a href="student_view.php?id=<?= $student['ID']; ?>" class="btn view-btn">View</a>
-                                <a href="student_view.php?id=<?= $student['ID']; ?>" class="btn delete-btn">Delete</a>
-                                <a href="student-view.php?id=<?= $student['ID']; ?>" class="btn update-btn">Update</a>
+                                <a href="student_view.php?id=<?= $student['u_ID']; ?>" class="btn view-btn">View</a>
+                                <a href="student_view.php?id=<?= $student['u_ID']; ?>" class="btn delete-btn">Delete</a>
+                                <a href="student-view.php?id=<?= $student['u_ID']; ?>" class="btn update-btn">Update</a>
                             </td>
 
                         </tr>

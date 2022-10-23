@@ -8,13 +8,13 @@ if(isset($_POST['login']))
 $username = mysqli_real_escape_string($con, $_POST['username']);
 $password = mysqli_real_escape_string($con, $_POST['password']);
 
-$query = "SELECT * FROM users where username='$username'";
+$query = "SELECT * FROM users where u_username='$username'";
 $query_run = mysqli_query($con, $query);
 $num = 1;
 
     if($num > 0){
         $data = $query_run->fetch_array();
-        if(password_verify($password, $data['password'])){
+        if(password_verify($password, $data['u_password'])){
 
             header("Location: http://localhost/AdmissionPortal/home_page.php");
             $_SESSION['message'] = "Welcome to Admin Panel"; 
@@ -28,10 +28,10 @@ $num = 1;
 if(mysqli_num_rows($query_run) > 0)
 {
     foreach($query_run as $data){
-        $user_id = $data['ID'];
-        $user_name = $data['name'];
-        $user_email = $data['email'];
-        $user_role = $data['user_role'];
+        $user_id = $data['u_ID'];
+        $user_name = $data['u_name'];
+        $user_email = $data['u_email'];
+        $user_role = $data['u_role'];
     }
 
     $_SESSION['auth'] = true;
@@ -88,7 +88,7 @@ if(isset($_POST['register_student']))
     $c_pass = mysqli_real_escape_string($con, $_POST['c_pass']);
 
     if($pass == $c_pass){
-        $checkemail = "SELECT email FROM users WHERE email='$email'";
+        $checkemail = "SELECT u_email FROM users WHERE u_email='$email'";
         $checkemail_run = mysqli_query($con, $checkemail);
 
         if(mysqli_num_rows($checkemail_run) > 0){
@@ -97,7 +97,7 @@ if(isset($_POST['register_student']))
             exit(0);
         }else{
             $hash = password_hash($pass, PASSWORD_DEFAULT); //added hash 
-            $query = "INSERT INTO users (name,email,username,password) VALUES ('$name','$email','$username','$hash')";
+            $query = "INSERT INTO users (u_name,u_email,u_username,u_password) VALUES ('$name','$email','$username','$hash')";
 
             $query_run = mysqli_query($con, $query);
             if($query_run)
@@ -134,8 +134,9 @@ if(isset($_POST['form_btn']))
 
     $id = "SELECT ID FROM users where email='$email'";
     $query_get_id = mysqli_query($con, $id);
+    $id = 17;
 
-    $query_personal = "INSERT INTO personal_details (stu_id,fullname,dob,email,stu_mobile,gender,Branch) VALUES ('$id','$name','$dob','$email','$mobileno','$gender','$class')";
+    $query_personal = "INSERT INTO personal_details (u_ID,u_name,u_dob,u_email,u_mobile,u_gender,u_class) VALUES ('$id','$name','$dob','$email','$mobileno','$gender','$class')";
 
     $address_type = mysqli_real_escape_string($con, $_POST['address_type']);
     $nationality = mysqli_real_escape_string($con, $_POST['nationality']);

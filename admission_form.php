@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="admission_style.css?v3">
+    <link rel="stylesheet" href="admission_style.css?v4">
 
     <title>Addmission Form </title> 
 </head>
@@ -36,27 +36,27 @@
 
                     <div class="fields">
                         <div class="input-field">
-                            <label>Full Name</label>
+                            <label>Full Name<span class="star">*</span></label>
                             <input type="text" name="name" placeholder="Enter your name" required>
                         </div>
 
                         <div class="input-field">
-                            <label>Date of Birth</label>
+                            <label>Date of Birth<span class="star">*</span></label>
                             <input type="date" name="dob" placeholder="Enter birth date" required>
                         </div>
 
                         <div class="input-field">
-                            <label>Email</label>
+                            <label>Email<span class="star">*</span></label>
                             <input type="email" name="email" placeholder="Enter your email" required>
                         </div>
 
                         <div class="input-field">
-                            <label>Mobile Number</label>
-                            <input type="number" name="mobileno" placeholder="Enter mobile number" required>
+                            <label>Mobile Number<span class="star">*</span></label>
+                            <input type="tel" name="mobileno" placeholder="Enter 10 digits only" required pattern="[0-9]{10}">
                         </div>
 
                         <div class="input-field">
-                            <label>Gender</label>
+                            <label>Gender<span class="star">*</span></label>
                             <select name="gender" required>
                                 <option disabled selected>Select gender</option>
                                 <option>Male</option>
@@ -66,7 +66,7 @@
                         </div>
 
                         <div class="input-field">
-                            <label>Class</label>
+                            <label>Class<span class="star">*</span></label>
                             <input type="text" name="class" placeholder="Enter your class/standard" required>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
 
                     <div class="fields">
                         <div class="input-field">
-                            <label>ID Type</label>
+                            <label>ID Type<span class="star">*</span></label>
                             <select required>
                                 <option disabled selected>Select ID Type</option>
                                 <option>Birth Certificate</option>
@@ -88,20 +88,20 @@
                         
 
                         <div class="input-field">
-                            <label>Upload Your Document</label>
-                                <input class="upload-doc" type="file" required>
+                            <label>Upload Your Document<span class="star">*</span></label>
+                                <input class="upload-doc" type="file" accept=".pdf" required>
                         </div>
 
                         <div class="input-field">
-                            <label>Upload Your Photo</label>
-                                <input class="upload-doc" type="file" required>
+                            <label>Upload Your Photo<span class="star">*</span></label>
+                                <input class="upload-doc" type="file" accept=".jpg, .jpeg, .png" required>
                         </div>
                     </div>
 
                     <span class="title">Parent/Gaurdian Identity Details</span>
                     <div class="fields">
                         <div class="input-field">
-                            <label>ID Type</label>
+                            <label>ID Type<span class="star">*</span></label>
                             <select required>
                                 <option disabled selected>Select ID Type</option>
                                 <option>Birth Certificate</option>
@@ -111,12 +111,12 @@
                         </div>
                         
                         <div class="input-field">
-                            <label>Upload Your Document</label>
-                                <input class="upload-doc" type="file" required>
+                            <label>Upload Your Document<span class="star">*</span></label>
+                                <input class="upload-doc" type="file" accept=".pdf" required>
                         </div>
                         <div class="input-field">
-                            <label>Upload Your Photo</label>
-                                <input class="upload-doc" type="file" required>
+                            <label>Upload Your Photo<span class="star">*</span></label>
+                                <input class="upload-doc" type="file" accept=".jpg, .jpeg, .png" required>
                         </div>
                     </div>
 
@@ -133,7 +133,7 @@
 
                     <div class="fields">
                         <div class="input-field">
-                            <label>Address Type</label>
+                            <label>Address Type<span class="star">*</span></label>
                             <select name="address_type">
                                 <option value="" disabled selected>Type of address</option>
                                 <option value="">Permanent</option>
@@ -142,27 +142,27 @@
                         </div>
 
                         <div class="input-field">
-                            <label>Nationality</label>
+                            <label>Nationality<span class="star">*</span></label>
                             <input type="text" name="nationality" placeholder="Enter nationality" required>
                         </div>
 
                         <div class="input-field">
-                            <label>State</label>
+                            <label>State<span class="star">*</span></label>
                             <input type="text" name="state" placeholder="Enter your state" required>
                         </div>
 
                         <div class="input-field">
-                            <label>District</label>
+                            <label>District<span class="star">*</span></label>
                             <input type="text" name="district" placeholder="Enter your district" required>
                         </div>
 
                         <div class="input-field">
-                            <label>Area</label>
+                            <label>Area<span class="star">*</span></label>
                             <input type="text" name="area" placeholder="Enter your area" required>
                         </div>
 
                         <div class="input-field">
-                            <label>Building Name</label>
+                            <label>Building Name<span class="star">*</span></label>
                             <input type="text" name="building_name" placeholder="Enter Building name" required>
                         </div>
                     </div>
@@ -184,22 +184,22 @@
 
                         <div class="input-field">
                             <label>Number of Siblings</label>
-                            <input type="number" name="sibblings_no" placeholder="Enter no. of Siblings" required>
+                            <input type="tel" name="sibblings_no" placeholder="Enter no. of Siblings" required pattern="[0-9]{2}">
                         </div>
 
                         <div class="input-field">
                             <label>Father's Mobile Number</label>
-                            <input type="number" name="father_contact" placeholder="Enter father's mobile number" >
+                            <input type="tel" name="father_contact" placeholder="Enter father's mobile number" required pattern="[0-9]{10}">
                         </div>
 
                         <div class="input-field">
                             <label>Mother's Mobile Number</label>
-                            <input type="number" name="mother_contact" placeholder="Enter mother's mobile number">
+                            <input type="tel" name="mother_contact" placeholder="Enter mother's mobile number" required pattern="[0-9]{10}">
                         </div>
 
                         <div class="input-field">
                             <label>Telephone Number</label>
-                            <input type="number" name="telephone" placeholder="Enter telephone number">
+                            <input type="tel" name="telephone" placeholder="Enter telephone number" pattern="[0-9]{8}">
                         </div>
                     </div>
 

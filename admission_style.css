@@ -43,7 +43,9 @@ body{
     border-radius: 8px;
     background-color: #4070f4;
 }
-
+.star{
+    color: red;
+}
 /* Progress bar */
 .progressbar{
     position: relative;

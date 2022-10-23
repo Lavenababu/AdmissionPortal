@@ -17,6 +17,7 @@ require 'partials/_dbconnect.php'
 <body>
 <?php
     $query = "SELECT * FROM personal_details";
+    // WHERE u_email="  "
     $query_run = mysqli_query($con, $query);
     if (mysqli_num_rows($query_run) > 0) {
         foreach ($query_run as $usertable) {
@@ -33,11 +34,11 @@ require 'partials/_dbconnect.php'
             <img src="team-1.jpg" alt="photo" class="photo" />
             <hr width="80%" />
             <br />
-            <h2 class="fullname">Name: <?= $usertable['fullname']; ?></h2>
+            <h2 class="fullname">Name: <?= $usertable['u_name']; ?></h2>
             <br />
             <hr width="80%" />
             <br />
-            <h3>D.O.B: <?= $usertable['dob']; ?></h3>
+            <h3>D.O.B: <?= $usertable['u_dob']; ?></h3>
         </div>
 
         <!-- Container with personal details -->
@@ -51,22 +52,22 @@ require 'partials/_dbconnect.php'
                     <div class="fields">
                         <div class="input-field">
                             <label>Email</label>
-                            <input type="email" name="email" value="<?= $usertable['email']; ?>" disabled>
+                            <input type="email" name="email" value="<?= $usertable['u_email']; ?>" disabled>
                         </div>
 
                         <div class="input-field">
                             <label>Mobile Number</label>
-                            <input type="number" name="mobileno" value="<?= $usertable['stu_mobile']; ?>" disabled>
+                            <input type="number" name="mobileno" value="<?= $usertable['u_mobile']; ?>" disabled>
                         </div>
 
                         <div class="input-field">
                             <label>Gender</label>
-                            <input type="text" name="gender" value="<?= $usertable['gender']; ?>" disabled>
+                            <input type="text" name="gender" value="<?= $usertable['u_gender']; ?>" disabled>
                         </div>
 
                         <div class="input-field">
                             <label>Branch</label>
-                            <input type="text" name="branch" value="<?= $usertable['Branch']; ?>" disabled>
+                            <input type="text" name="branch" value="<?= $usertable['u_class']; ?>" disabled>
                         </div>
                         <div class="input-field">
                             <label>HSC Marks</label>
