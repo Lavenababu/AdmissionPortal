@@ -8,14 +8,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Home Page</title>
-  <link rel = "stylesheet" href="./home_style.css?v1">
+  <link rel = "stylesheet" href="./home_style.css?v2">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
 </head>
+
 <body>
-<section id="topbar" class="d-flex align-items-center">
+  <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
         <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:admission@dbit.in">admission@dbit.in</a></i>
@@ -40,16 +40,33 @@
      </div>
   </section>
 
-  <section id="contact" class="contact">
+  <section id="formlink" class="formlink">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Apply</h2>
-          <h3><span>Please fill in all the details carefully</span></h3>
-          <hr>
-          <a href="admission_form.php">Click here to apply!</a>
-          <hr>
-        </div></div></section>
+          <h3><span>Application Form</span></h3><br>
+          <?php if(isset($_SESSION['auth_user'])) : ?>
+
+            <?php if($_SESSION['auth_app'] == 'filled') : ?>
+              <hr>
+                <h5><span>You have filled the application!!</span></h5>
+              <hr>
+            <?php else : ?>
+              <h5><span>Please fill in all the details carefully</span></h5>
+              <hr>
+                <a href="admission_form.php">Click here to Apply!</a>
+              <hr>
+            <?php endif; ?>
+
+          <?php else : ?>
+            <hr>
+            <h5><span>Login to fill the Application Form!</span></h5>
+            <hr>
+          <?php endif; ?>
+
+        </div>
+      </div>
+  </section>
 
 
       <!-- ======= Contact Section ======= -->
@@ -57,7 +74,6 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Contact</h2>
           <h3><span>Contact Us</span></h3>
         </div>
 

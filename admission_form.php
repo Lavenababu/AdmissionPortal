@@ -14,8 +14,9 @@
     <title>Addmission Form </title> 
 </head>
 <body>
-<?php include ('partials/_message.php'); ?>
+
     <div class="container">
+    <?php include ('partials/_message.php'); ?>
         <header>Admission form</header>
 
         <form action="partials/_code.php" method="POST">
@@ -184,7 +185,7 @@
 
                         <div class="input-field">
                             <label>Number of Siblings</label>
-                            <input type="tel" name="sibblings_no" placeholder="Enter no. of Siblings" required pattern="[0-9]{2}">
+                            <input type="tel" name="sibblings_no" placeholder="Enter no. of Siblings" required pattern="[0-9]{1}">
                         </div>
 
                         <div class="input-field">

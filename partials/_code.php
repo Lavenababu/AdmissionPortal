@@ -32,10 +32,12 @@ if(mysqli_num_rows($query_run) > 0)
         $user_name = $data['u_name'];
         $user_email = $data['u_email'];
         $user_role = $data['u_role'];
+        $user_app = $data['u_application'];
     }
 
     $_SESSION['auth'] = true;
     $_SESSION['auth_role'] = "$user_role"; //1-admin, 0-user
+    $_SESSION['auth_app'] = "$user_app";
     $_SESSION['auth_user'] = [
         'user_id'=>$user_id,
         'username'=>$user_name,
@@ -132,9 +134,9 @@ if(isset($_POST['form_btn']))
     $gender = mysqli_real_escape_string($con, $_POST['gender']);
     $class = mysqli_real_escape_string($con, $_POST['class']);
 
-    $id = "SELECT ID FROM users where email='$email'";
-    $query_get_id = mysqli_query($con, $id);
-    $id = 17;
+    // $id = "SELECT ID FROM users where email='$email'";
+    // $query_get_id = mysqli_query($con, $id);
+    $id = 20;
 
     $query_personal = "INSERT INTO personal_details (u_ID,u_name,u_dob,u_email,u_mobile,u_gender,u_class) VALUES ('$id','$name','$dob','$email','$mobileno','$gender','$class')";
 
@@ -161,8 +163,9 @@ if(isset($_POST['form_btn']))
     $query_run_fam = mysqli_query($con, $query_family);
     if($query_run)
     {
+
         $_SESSION['message'] = "Your form is submitted sucessfully!";
-        header("Location: http://localhost/AdmissionPortal/login.php");
+        header("Location: http://localhost/AdmissionPortal/home_page.php");
         exit(0);
     }
     else
