@@ -16,9 +16,9 @@ $num = 1;
         $data = $query_run->fetch_array();
         if(password_verify($password, $data['u_password'])){
 
-            header("Location: http://localhost/AdmissionPortal/home_page.php");
-            $_SESSION['message'] = "Welcome to Admin Panel"; 
-            exit(0);
+            // header("Location: http://localhost/AdmissionPortal/home_page.php");
+            // $_SESSION['message'] = "Welcome to Admin Panel"; 
+            // exit(0);
         
         }
     }else{
@@ -134,22 +134,24 @@ if(isset($_POST['form_btn']))
     $gender = mysqli_real_escape_string($con, $_POST['gender']);
     $class = mysqli_real_escape_string($con, $_POST['class']);
 
-    $get_id = "SELECT * FROM users where email='$email'";
-    $query_get_id = mysqli_query($con, $get_id);
-    // // $id = 20;
+    // $get_id = "SELECT * FROM users where email='$email'";
+    // $query_get_id = mysqli_query($con, $get_id);
+    $id = 3;
     
-    if(mysqli_num_rows($query_get_id) > 0)
-    {
-        foreach($query_get_id as $data){
-        $id = $data['u_ID'];
-        $user_app = $data['u_application'];
-        }
-        $_SESSION['auth_app'] = "$user_app";
-    }
+    // if(mysqli_num_rows($query_get_id) > 0)
+    // {
+    //     foreach($query_get_id as $data){
+    //     // $id = $data['u_ID'];
+    //     $user_app = $data['u_application'];
+    //     }
+    //     $_SESSION['auth_app'] = "$user_app";
+    // }
 
     // $id = $_SESSION['auth_user']['user_id'];
 
-    $query_personal = "INSERT INTO personal_details (u_ID,u_name,u_dob,u_email,u_mobile,u_gender,u_class) VALUES ('$id','$name','$dob','$email','$mobileno','$gender','$class')";
+    
+
+    $query_personal = "INSERT INTO personal_details (u_ID,u_name,u_dob,u_email,u_mobileno,u_gender,u_class) VALUES ('$id','$name','$dob','$email','$mobileno','$gender','$class')";
 
     $address_type = mysqli_real_escape_string($con, $_POST['address_type']);
     $nationality = mysqli_real_escape_string($con, $_POST['nationality']);
@@ -174,7 +176,7 @@ if(isset($_POST['form_btn']))
     $query_run_fam = mysqli_query($con, $query_family);
     if($query_run)
     {
-
+        $_SESSION['auth_app'] = "filled";
         $_SESSION['message'] = "Your form is submitted sucessfully!";
         header("Location: http://localhost/AdmissionPortal/home_page.php");
         exit(0);
