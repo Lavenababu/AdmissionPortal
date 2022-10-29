@@ -26,7 +26,8 @@ require 'partials/_dbconnect.php'
                     <th>Name</th>
                     <th>Email</th>
                     <th>Username</th>
-                    <!-- <th>Password</th> -->
+                    <!-- <th>Branch</th> -->
+                    <!-- <th>Application</th> -->
                     <th>Operations</th>
                 </tr>
             </thead>
@@ -65,3 +66,5 @@ require 'partials/_dbconnect.php'
 </body>
 
 </html>
+
+

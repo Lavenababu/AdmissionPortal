@@ -44,6 +44,9 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#formlink">Apply</a>
+        </li>
 
         <!-- <li class="nav-item">
           <a class="nav-link" href="/AdmissionPortal/login.php">Login</a>
