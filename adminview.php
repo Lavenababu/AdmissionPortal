@@ -7,17 +7,27 @@ require 'partials/_dbconnect.php'
 
 <head>
     <meta charset="UTF-8">
-    <title>HTML5 Login Form with validation Example</title>
-    <link rel="stylesheet" href="admin_style.css">
+    <title>Admin View</title>
+    <link rel="stylesheet" href="admin_style.css?v3">
+    <!-- <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> -->
 </head>
 
 <body>
-    
     <?php include('partials/_message.php'); ?>
+    <!-- navbar -->
+<div class="sidebar">
+    <h2>&nbsp;Admission Portal</h2>
+    <a href="admin_dashboard.php">Dashboard</a>
+    <a class="active" href="#">Views</a>
+    <a href="#about">Logout</a>
+</div>
+<!-- end of navbar  -->
+
+<div class="content">
+
     <div id="admin">
 
         <a href="home_page.php" class="btn back-btn">&laquo; Back</a>
-        <h2>Admin Panel</h2>
 
         <table class="table-style">
             <thead>
@@ -26,9 +36,9 @@ require 'partials/_dbconnect.php'
                     <th>Name</th>
                     <th>Email</th>
                     <th>Username</th>
+                    <th>Operations</th>
                     <!-- <th>Branch</th> -->
                     <!-- <th>Application</th> -->
-                    <th>Operations</th>
                 </tr>
             </thead>
             <tbody>
@@ -62,6 +72,7 @@ require 'partials/_dbconnect.php'
             </tbody>
         </table><br><br>
     </div>
+            </div>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script> -->
 </body>
 
