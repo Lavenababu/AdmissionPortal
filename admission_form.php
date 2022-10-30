@@ -67,8 +67,26 @@
                         </div>
 
                         <div class="input-field">
-                            <label>Class<span class="star">*</span></label>
-                            <input type="text" name="class" placeholder="Enter your class/standard" required>
+                            <label>Branch<span class="star">*</span></label>
+                            <select name="gender" required>
+                                <option disabled selected>Select branch</option>
+                                <option>Information Technology</option>
+                                <option>Computer Science</option>
+                                <option>Mechanical</option>
+                                <option>Electronics</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>Religion<span class="star">*</span></label>
+                            <input type="text" placeholder="Enter your Religion">
+                        </div>
+                        <div class="input-field">
+                            <label>Caste<span class="star">*</span></label>
+                            <input type="text" placeholder="Enter your Caste">
+                        </div>
+                        <div class="input-field">
+                            <label>Seat Type<span class="star">*</span></label>
+                            <input type="text" placeholder="Enter your seat type">
                         </div>
                     </div>
                 </div>
@@ -121,11 +139,28 @@
                         </div>
                     </div>
 
+                    <span class="title">Student Marks Details</span>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Leaving Certificate <span class="star">*</span></label>
+                            <input class="upload-doc" type="file" accept=".pdf" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>HSC Mark Sheet<span class="star">*</span></label>
+                            <input class="upload-doc" type="file" accept=".pdf" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>MHT-CET 2021 Score Card <span class="star">*</span></label>
+                            <input class="upload-doc" type="file" accept=".pdf" required>
+                        </div>
+                    </div>
+                </div>
                     <button class="nextBtn">
                         <span class="btnText">Next</span>
                         <i class="uil uil-navigator"></i>
                     </button>
-                </div> 
             </div>
 
             <div class="form second">
@@ -202,6 +237,34 @@
                             <label>Telephone Number</label>
                             <input type="tel" name="telephone" placeholder="Enter telephone number" pattern="[0-9]{8}">
                         </div>
+                        <div class="input-field">
+                            <label>Father's Designation</label>
+                            <input type="text" placeholder="Enter your father's job title">
+                        </div>
+                        <div class="input-field">
+                            <label>Mother's Designation</label>
+                            <input type="text" placeholder="Ente your mother's job title">
+                        </div>
+                        <div class="input-field">
+                            <label>Parent's Email</label>
+                            <input type="text" placeholder="Enter your parent's email address">
+                        </div>
+                        <div class="input-field">
+                            <label>Father's Annual Income</label>
+                            <input type="text" placeholder="Enter your father's income">
+                        </div>
+                        <div class="input-field">
+                            <label>Mother's Annual Income</label>
+                            <input type="text" placeholder="Enter your mother's income">
+                        </div>
+                        <div class="input-field">
+                            <label>Father/Mother domociled in Maharashtra</label>
+                            <select name="Domocile">
+                                <option value="" disabled selected>Domocile status of parent's</option>
+                                <option value="">Yes</option>
+                                <option value="">No</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="buttons">
@@ -215,6 +278,8 @@
                     </div>
                 </div> 
             </div>
+
+            
         </form>
     </div>
 
