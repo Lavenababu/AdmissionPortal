@@ -124,8 +124,19 @@ if(isset($_POST['register_student']))
 
 }
 
-if(isset($_POST['form_btn']))
-{
+if(isset($_POST['form_btn']) && isset($_POST['file'])){         // starting here is the code for doc upload
+                                                                // && isset($_FILES['file'])
+    $fileName = $_FILES['file']['name'];
+    // for($i=0;$i<$fileCount;$i++){
+        // $fileName = $_FILES['file']['name'][$i];
+        $sql= "INSERT INTO fileup(title, img) VALUES('$fileName', '$fileName')";
+        $query_file = mysqli_query($con, $sql);
+        
+    // $filetemp = $_FILES['file']['tmp_name'];
+    move_uploaded_file($_FILES['file']['tmp_name'], "upload/".$fileName); //['tmp_name']
+    // }
+
+    //Till here
 
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $dob = mysqli_real_escape_string($con, $_POST['dob']);
@@ -136,7 +147,7 @@ if(isset($_POST['form_btn']))
 
     // $get_id = "SELECT * FROM users where email='$email'";
     // $query_get_id = mysqli_query($con, $get_id);
-    $id = 3;
+    $id = 1;
     
     // if(mysqli_num_rows($query_get_id) > 0)
     // {
@@ -187,21 +198,8 @@ if(isset($_POST['form_btn']))
         header("Location: http://localhost/AdmissionPortal/admission_form.php");
         exit(0);
     }
+
+    
 }
 
-// if(isset($_POST["submit"])){
-//     $title = $_POST["Upload Your Document"];
-//     $pname = rand(1000, 10000)."-".$_FILES["file"]["name"];
-//     $tname = $_FILES["files"]["tmp_name"];
-//     $uploads_dir = '/images';
-//     move_uploaded_file($tname, $uploads_dir.'/'.$pname);
-//     $query = "INSERT INTO fileup(title, image) VALUES('$title', '$pname')";
-
-//     if(mysqli_query($con, $query)){
-//         echo "File submitted";
-//     }
-//     else{
-//         echo "Error";
-//     }
-// }
 ?>

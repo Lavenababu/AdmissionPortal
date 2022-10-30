@@ -19,7 +19,7 @@
     <?php include ('partials/_message.php'); ?>
         <header>Admission form</header>
 
-        <form action="partials/_code.php" method="POST">
+        <form action="partials/_code.php" method="POST" enctype="multipart/form-data">
 
             <!-- Progress Bar -->
             <!-- <div class="progressbar">
@@ -86,16 +86,33 @@
                                 <option>Others</option>
                             </select>
                         </div>
-                        
-
+                        <!-- writting a code for accepting files in the database -->
+                        <!-- 
+                        if(isset($_POST['file'])){
+                            $fileCount = count($_FILES['file']['name']);
+                            for($i=0;$i<$fileCount;$i++){
+                                $fileName = $_FILES['file']['name'][$i];
+                                $sql= "INSERT INTO fileup(title, img) VALUES('$fileName', '$fileName')";
+                                
+                                if(mysqli_query($con, $sql)){
+                                    echo "File Uploaded Successfully";
+                                }else{
+                                    echo "ERROR";
+                                }
+                                move_uploaded_file($_FILES['file']['tmp_name'][$i], 'upload/'.$fileName);
+                            }
+                        }
+                        -->
+                        <!-- Till here -->
                         <div class="input-field">
                             <label>Upload Your Document<span class="star">*</span></label>
-                                <input class="upload-doc" type="file" accept=".pdf" required>
+                                <input class="upload-doc" type="file" name="file[]" id= "file" accept=".pdf" required>          <!-- name='file[]' -->
+
                         </div>
 
                         <div class="input-field">
                             <label>Upload Your Photo<span class="star">*</span></label>
-                                <input class="upload-doc" type="file" accept=".jpg, .jpeg, .png" required>
+                                <!-- <input class="upload-doc" type="file" accept=".jpg, .jpeg, .png" required> -->
                         </div>
                     </div>
 
@@ -113,11 +130,11 @@
                         
                         <div class="input-field">
                             <label>Upload Your Document<span class="star">*</span></label>
-                                <input class="upload-doc" type="file" accept=".pdf" required>
+                                <!-- <input class="upload-doc" type="file" accept=".pdf" required> -->
                         </div>
                         <div class="input-field">
                             <label>Upload Your Photo<span class="star">*</span></label>
-                                <input class="upload-doc" type="file" accept=".jpg, .jpeg, .png" required>
+                                <!-- <input class="upload-doc" type="file" accept=".jpg, .jpeg, .png" required> -->
                         </div>
                     </div>
 
