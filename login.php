@@ -20,7 +20,7 @@
         <form id="form" action="partials/_code.php" method="POST">
 
           <p>
-          <input type="text" id="username" name="username" placeholder="Username" required><i class="validation"><span></span><span></span></i><br><br>
+          <input type="email" id="email" name="email" placeholder="Email" required><i class="validation"><span></span><span></span></i><br><br>
           <input type="password" id="password" name="password" placeholder="Password" required><i class="validation"></i></p>
 
           <div id="forgot-pass">

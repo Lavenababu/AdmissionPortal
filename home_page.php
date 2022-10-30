@@ -15,6 +15,7 @@
 </head>
 
 <body>
+<?php include ('partials/_message.php'); ?>
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
@@ -32,7 +33,6 @@
   <h3><img src="assets/Dbit_logo.png" width="100" height="100">Don Bosco Institute Of Technology</h3>
 
   <?php require 'partials/_nav.php' ?>
-  <?php include ('partials/_message.php'); ?>
   
   <section class="hero" id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">

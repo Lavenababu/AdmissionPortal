@@ -8,7 +8,7 @@ require 'partials/_dbconnect.php'
 <head>
     <meta charset="UTF-8">
     <title>Admin View</title>
-    <link rel="stylesheet" href="admin_style.css?v3">
+    <link rel="stylesheet" href="admin_style.css?v4">
     <!-- <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> -->
 </head>
 
@@ -26,7 +26,7 @@ require 'partials/_dbconnect.php'
 <div class="content">
 
     <div id="admin">
-
+        <h2 style="text-align:center;">List of Registered Students</h2>
         <a href="home_page.php" class="btn back-btn">&laquo; Back</a>
 
         <table class="table-style">
@@ -36,6 +36,7 @@ require 'partials/_dbconnect.php'
                     <th>Name</th>
                     <th>Email</th>
                     <th>Username</th>
+                    <th>Admission Form</th>
                     <th>Operations</th>
                     <!-- <th>Branch</th> -->
                     <!-- <th>Application</th> -->
@@ -54,6 +55,7 @@ require 'partials/_dbconnect.php'
                             <td><?= $student['u_name']; ?></td>
                             <td><?= $student['u_email']; ?></td>
                             <td><?= $student['u_username']; ?></td>
+                            <td><?= $student['u_application']; ?></td>
                             <td>
                                 <a href="student_view.php?id=<?= $student['u_ID']; ?>" class="btn view-btn">View</a>
                                 <a href="student_view.php?id=<?= $student['u_ID']; ?>" class="btn delete-btn">Delete</a>

@@ -5,10 +5,10 @@ require '_dbconnect.php';
 if(isset($_POST['login']))
 {
 
-$username = mysqli_real_escape_string($con, $_POST['username']);
+$email = mysqli_real_escape_string($con, $_POST['email']);
 $password = mysqli_real_escape_string($con, $_POST['password']);
 
-$query = "SELECT * FROM users where u_username='$username'";
+$query = "SELECT * FROM users where u_email='$email'";
 $query_run = mysqli_query($con, $query);
 $num = 1;
 
@@ -46,8 +46,8 @@ if(mysqli_num_rows($query_run) > 0)
 
     if($_SESSION['auth_role'] == '1') //admin
     {
-        header("Location: http://localhost/AdmissionPortal/adminview.php");
         $_SESSION['message'] = "Welcome to Admin Panel"; 
+        header("Location: http://localhost/AdmissionPortal/admin_dashboard.php");
         exit(0);
     }
     elseif($_SESSION['auth_role'] == '0') //user
@@ -64,7 +64,7 @@ if(mysqli_num_rows($query_run) > 0)
 }
 else
 {
-    $_SESSION['message'] = "Invalid Username or Password"; //message to show
+    $_SESSION['message'] = "Invalid Email or Password"; //message to show
     header("Location: http://localhost/AdmissionPortal/login.php");
     exit(0);
 }
@@ -137,31 +137,20 @@ if(isset($_POST['form_btn'])){         // starting here is the code for doc uplo
     // // }
 
     //Till here
-
+    $id = $_SESSION['auth_user']['user_id'];
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $dob = mysqli_real_escape_string($con, $_POST['dob']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $mobileno = mysqli_real_escape_string($con, $_POST['mobileno']);
     $gender = mysqli_real_escape_string($con, $_POST['gender']);
-    $class = mysqli_real_escape_string($con, $_POST['class']);
+    $branch = mysqli_real_escape_string($con, $_POST['branch']);
+    $religion = mysqli_real_escape_string($con, $_POST['religion']);
+    $caste = mysqli_real_escape_string($con, $_POST['caste']);
+    $seat = mysqli_real_escape_string($con, $_POST['seat']);
 
-    // $get_id = "SELECT * FROM users where email='$email'";
-    // $query_get_id = mysqli_query($con, $get_id);
-    $id = 22;
-    
-    // if(mysqli_num_rows($query_get_id) > 0)
-    // {
-    //     foreach($query_get_id as $data){
-    //     // $id = $data['u_ID'];
-    //     $user_app = $data['u_application'];
-    //     }
-    //     $_SESSION['auth_app'] = "$user_app";
-    // }
+    // $class = mysqli_real_escape_string($con, $_POST['class']); 
 
-    // $id = $_SESSION['auth_user']['user_id'];
-
-
-    $query_personal = "INSERT INTO personal_details (u_ID,u_name,u_dob,u_email,u_mobileno,u_gender,u_class) VALUES ('$id','$name','$dob','$email','$mobileno','$gender','$class')";
+    $query_personal = "INSERT INTO personal_details (u_ID,u_name,u_dob,u_email,u_mobileno,u_gender,u_branch,u_religion,u_caste,u_seat) VALUES ('$id','$name','$dob','$email','$mobileno','$gender','$branch','$religion','$caste','$seat')";
 
     $address_type = mysqli_real_escape_string($con, $_POST['address_type']);
     $nationality = mysqli_real_escape_string($con, $_POST['nationality']);
@@ -178,8 +167,14 @@ if(isset($_POST['form_btn'])){         // starting here is the code for doc uplo
     $father_contact = mysqli_real_escape_string($con, $_POST['father_contact']);
     $mother_contact = mysqli_real_escape_string($con, $_POST['mother_contact']);
     $telephone = mysqli_real_escape_string($con, $_POST['telephone']);
+    $father_designation = mysqli_real_escape_string($con, $_POST['father_designation']);
+    $mother_designation = mysqli_real_escape_string($con, $_POST['mother_designation']);
+    $parents_email = mysqli_real_escape_string($con, $_POST['parents_email']);
+    $father_income = mysqli_real_escape_string($con, $_POST['father_income']);
+    $mother_income = mysqli_real_escape_string($con, $_POST['mother_income']);
+    $domicile = mysqli_real_escape_string($con, $_POST['domicile']);
 
-    $query_family = "INSERT INTO family_details (family_id,father_name,mother_name,sibblings_no,father_contact,mother_contact,telephone) VALUES ('$id','$father_name','$mother_name','$sibblings_no','$father_contact','$mother_contact','$telephone')";
+    $query_family = "INSERT INTO family_details (family_id,father_name,mother_name,sibblings_no,father_contact,mother_contact,telephone,father_designation,mother_designation,parents_email,father_income,mother_income,domicile) VALUES ('$id','$father_name','$mother_name','$sibblings_no','$father_contact','$mother_contact','$telephone','$father_designation','$mother_designation','$parents_email','$father_income','$mother_income','$domicile')";
 
     $query_run = mysqli_query($con, $query_personal);
     $query_run_add = mysqli_query($con, $query_address);

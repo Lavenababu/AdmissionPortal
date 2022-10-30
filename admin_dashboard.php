@@ -33,9 +33,9 @@ require 'partials/_dbconnect.php'
       <div class="overview-boxes">
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">IT</div>
+            <div class="box-topic">Information Technology</div>
             <?php 
-                $it_count = "SELECT * FROM personal_details WHERE u_branch='IT'";
+                $it_count = "SELECT * FROM personal_details WHERE u_branch='Information Technology'";
                 $it_count_run = mysqli_query($con, $it_count);
 
                 if($it_category = mysqli_num_rows($it_count_run)){
@@ -54,9 +54,9 @@ require 'partials/_dbconnect.php'
 
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">COMPS</div>
+            <div class="box-topic">Computer Science</div>
             <?php 
-                $it_count = "SELECT * FROM personal_details WHERE u_branch='COMPS'";
+                $it_count = "SELECT * FROM personal_details WHERE u_branch='Computer Science'";
                 $it_count_run = mysqli_query($con, $it_count);
 
                 if($it_category = mysqli_num_rows($it_count_run)){
@@ -75,9 +75,9 @@ require 'partials/_dbconnect.php'
 
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">EXTC</div>
+            <div class="box-topic">Electronics</div>
             <?php 
-                $it_count = "SELECT * FROM personal_details WHERE u_branch='EXTC'";
+                $it_count = "SELECT * FROM personal_details WHERE u_branch='Electronics'";
                 $it_count_run = mysqli_query($con, $it_count);
 
                 if($it_category = mysqli_num_rows($it_count_run)){
@@ -96,9 +96,9 @@ require 'partials/_dbconnect.php'
 
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">MECH</div>
+            <div class="box-topic">Mechanical</div>
             <?php 
-                $it_count = "SELECT * FROM personal_details WHERE u_branch='MECH'";
+                $it_count = "SELECT * FROM personal_details WHERE u_branch='Mechanical'";
                 $it_count_run = mysqli_query($con, $it_count);
 
                 if($it_category = mysqli_num_rows($it_count_run)){

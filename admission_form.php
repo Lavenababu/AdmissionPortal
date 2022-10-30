@@ -19,7 +19,7 @@
     <?php include ('partials/_message.php'); ?>
         <header>Admission form</header>
 
-        <form action="partials/_code.php" method="POST" enctype="multipart/form-data">
+        <form action="partials/_code.php" method="post" enctype="multipart/form-data">
 
             <!-- Progress Bar -->
             <!-- <div class="progressbar">
@@ -78,7 +78,7 @@
                         </div>
                         <div class="input-field">
                             <label>Religion<span class="star">*</span></label>
-                            <input type="text" placeholder="Enter your Religion">
+                            <input type="text" name="religion" placeholder="Enter your Religion">
                         </div>
                         <div class="input-field">
                             <label>Caste<span class="star">*</span></label>
@@ -86,7 +86,7 @@
                         </div>
                         <div class="input-field">
                             <label>Seat Type<span class="star">*</span></label>
-                            <input type="text" placeholder="Enter your seat type">
+                            <input type="text" name="seat" placeholder="Enter your seat type">
                         </div>
                     </div>
                 </div>
@@ -125,12 +125,11 @@
                         <div class="input-field">
                             <label>Upload Your Document<span class="star">*</span></label>
                                 <input class="upload-doc" type="file" name="file" id= "file" accept=".pdf" required>          <!-- name='file[]' -->
-
                         </div>
 
                         <div class="input-field">
                             <label>Upload Your Photo<span class="star">*</span></label>
-                                <!-- <input class="upload-doc" type="file" accept=".jpg, .jpeg, .png" required> -->
+                                <input class="upload-doc" type="file" accept=".jpg, .jpeg, .png" required>
                         </div>
                     </div>
 
@@ -148,11 +147,11 @@
                         
                         <div class="input-field">
                             <label>Upload Your Document<span class="star">*</span></label>
-                                <!-- <input class="upload-doc" type="file" accept=".pdf" required> -->
+                                <input class="upload-doc" type="file" accept=".pdf" required>
                         </div>
                         <div class="input-field">
                             <label>Upload Your Photo<span class="star">*</span></label>
-                                <!-- <input class="upload-doc" type="file" accept=".jpg, .jpeg, .png" required> -->
+                                <input class="upload-doc" type="file" accept=".jpg, .jpeg, .png" required>
                         </div>
                     </div>
 
@@ -160,17 +159,17 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Leaving Certificate <span class="star">*</span></label>
-                            <!-- <input class="upload-doc" type="file" accept=".pdf" required> -->
+                            <input class="upload-doc" type="file" accept=".pdf" required>
                         </div>
 
                         <div class="input-field">
                             <label>HSC Mark Sheet<span class="star">*</span></label>
-                            <!-- <input class="upload-doc" type="file" accept=".pdf" required> -->
+                            <input class="upload-doc" type="file" accept=".pdf" required>
                         </div>
 
                         <div class="input-field">
                             <label>MHT-CET 2021 Score Card <span class="star">*</span></label>
-                            <!-- <input class="upload-doc" type="file" accept=".pdf" required> -->
+                            <input class="upload-doc" type="file" accept=".pdf" required>
                         </div>
                     </div>
                 </div>
@@ -187,7 +186,7 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Address Type<span class="star">*</span></label>
-                            <select name="address_type">
+                            <select name="address_type" required>
                                 <option value="" disabled selected>Type of address</option>
                                 <option value="">Permanent</option>
                                 <option value="">Temporary</option>
@@ -256,28 +255,28 @@
                         </div>
                         <div class="input-field">
                             <label>Father's Designation</label>
-                            <input type="text" placeholder="Enter your father's job title">
+                            <input type="text" name="father_designation" placeholder="Enter your father's job title">
                         </div>
                         <div class="input-field">
                             <label>Mother's Designation</label>
-                            <input type="text" placeholder="Ente your mother's job title">
+                            <input type="text" name="mother_designation"  placeholder="Ente your mother's job title">
                         </div>
                         <div class="input-field">
                             <label>Parent's Email</label>
-                            <input type="text" placeholder="Enter your parent's email address">
+                            <input type="text" name="parents_email"  placeholder="Enter your parent's email address">
                         </div>
                         <div class="input-field">
                             <label>Father's Annual Income</label>
-                            <input type="text" placeholder="Enter your father's income">
+                            <input type="text" name="father_income"  placeholder="Enter your father's income">
                         </div>
                         <div class="input-field">
                             <label>Mother's Annual Income</label>
-                            <input type="text" placeholder="Enter your mother's income">
+                            <input type="text" name="mother_income"  placeholder="Enter your mother's income">
                         </div>
                         <div class="input-field">
-                            <label>Father/Mother domociled in Maharashtra</label>
-                            <select name="Domocile">
-                                <option value="" disabled selected>Domocile status of parent's</option>
+                            <label>Father/Mother domiciled in Maharashtra</label>
+                            <select name="domicile">
+                                <option value="" disabled selected>Domicile status of parent's</option>
                                 <option value="">Yes</option>
                                 <option value="">No</option>
                             </select>

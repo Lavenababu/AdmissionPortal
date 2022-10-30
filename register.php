@@ -30,7 +30,7 @@
 
           <div class="form-control">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Name" required><i class="validation"></i>
+            <input type="text" id="name" name="name" placeholder="Enter your Full Name" required><i class="validation"></i>
           </div>
 
           <div class="form-control">
@@ -38,10 +38,10 @@
             <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="example@email.com" required><i class="validation"></i>
           </div>
 
-          <div class="form-control">
+          <!-- <div class="form-control">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="User123" required><i class="validation"></i>
-          </div>
+          </div> -->
 
           <div class="form-control">
             <label for="password">Password</label>
@@ -57,7 +57,7 @@
 
           <div class="form-control">
           <label for="c_password">Confirm Password</label>
-          <input type="password" id="c_pass" name="c_pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" required><i class="validation"></i>
+          <input type="password" id="c_pass" name="c_pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter the same Password" required><i class="validation"></i>
           </div>
 
         </p>
