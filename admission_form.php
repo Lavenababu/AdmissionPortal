@@ -68,7 +68,7 @@
 
                         <div class="input-field">
                             <label>Branch<span class="star">*</span></label>
-                            <select name="gender" required>
+                            <select name="branch" required>
                                 <option disabled selected>Select branch</option>
                                 <option>Information Technology</option>
                                 <option>Computer Science</option>
@@ -82,7 +82,7 @@
                         </div>
                         <div class="input-field">
                             <label>Caste<span class="star">*</span></label>
-                            <input type="text" placeholder="Enter your Caste">
+                            <input type="text" name="caste" placeholder="Enter your Caste">
                         </div>
                         <div class="input-field">
                             <label>Seat Type<span class="star">*</span></label>
@@ -124,7 +124,7 @@
                         <!-- Till here -->
                         <div class="input-field">
                             <label>Upload Your Document<span class="star">*</span></label>
-                                <input class="upload-doc" type="file" name="file[]" id= "file" accept=".pdf" required>          <!-- name='file[]' -->
+                                <input class="upload-doc" type="file" name="file" id= "file" accept=".pdf" required>          <!-- name='file[]' -->
 
                         </div>
 
@@ -160,17 +160,17 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Leaving Certificate <span class="star">*</span></label>
-                            <input class="upload-doc" type="file" accept=".pdf" required>
+                            <!-- <input class="upload-doc" type="file" accept=".pdf" required> -->
                         </div>
 
                         <div class="input-field">
                             <label>HSC Mark Sheet<span class="star">*</span></label>
-                            <input class="upload-doc" type="file" accept=".pdf" required>
+                            <!-- <input class="upload-doc" type="file" accept=".pdf" required> -->
                         </div>
 
                         <div class="input-field">
                             <label>MHT-CET 2021 Score Card <span class="star">*</span></label>
-                            <input class="upload-doc" type="file" accept=".pdf" required>
+                            <!-- <input class="upload-doc" type="file" accept=".pdf" required> -->
                         </div>
                     </div>
                 </div>

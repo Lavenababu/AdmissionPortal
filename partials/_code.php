@@ -124,17 +124,17 @@ if(isset($_POST['register_student']))
 
 }
 
-if(isset($_POST['form_btn']) && isset($_POST['file'])){         // starting here is the code for doc upload
+if(isset($_POST['form_btn'])){         // starting here is the code for doc upload
                                                                 // && isset($_FILES['file'])
-    $fileName = $_FILES['file']['name'];
-    // for($i=0;$i<$fileCount;$i++){
-        // $fileName = $_FILES['file']['name'][$i];
-        $sql= "INSERT INTO fileup(title, img) VALUES('$fileName', '$fileName')";
-        $query_file = mysqli_query($con, $sql);
+    // $fileName = $_FILES['file']['name'];
+    // // for($i=0;$i<$fileCount;$i++){
+    //     // $fileName = $_FILES['file']['name'][$i];
+    //     $sql= "INSERT INTO fileup(title, img) VALUES('$fileName', '$fileName')";
+    //     $query_file = mysqli_query($con, $sql);
         
-    // $filetemp = $_FILES['file']['tmp_name'];
-    move_uploaded_file($_FILES['file']['tmp_name'], "upload/".$fileName); //['tmp_name']
-    // }
+    // // $filetemp = $_FILES['file']['tmp_name'];
+    // move_uploaded_file($_FILES['file']['tmp_name'], 'upload/'.$fileName); //['tmp_name']
+    // // }
 
     //Till here
 
@@ -147,7 +147,7 @@ if(isset($_POST['form_btn']) && isset($_POST['file'])){         // starting here
 
     // $get_id = "SELECT * FROM users where email='$email'";
     // $query_get_id = mysqli_query($con, $get_id);
-    $id = 1;
+    $id = 22;
     
     // if(mysqli_num_rows($query_get_id) > 0)
     // {
@@ -160,7 +160,6 @@ if(isset($_POST['form_btn']) && isset($_POST['file'])){         // starting here
 
     // $id = $_SESSION['auth_user']['user_id'];
 
-    
 
     $query_personal = "INSERT INTO personal_details (u_ID,u_name,u_dob,u_email,u_mobileno,u_gender,u_class) VALUES ('$id','$name','$dob','$email','$mobileno','$gender','$class')";
 
@@ -185,6 +184,7 @@ if(isset($_POST['form_btn']) && isset($_POST['file'])){         // starting here
     $query_run = mysqli_query($con, $query_personal);
     $query_run_add = mysqli_query($con, $query_address);
     $query_run_fam = mysqli_query($con, $query_family);
+
     if($query_run)
     {
         $_SESSION['auth_app'] = "filled";
