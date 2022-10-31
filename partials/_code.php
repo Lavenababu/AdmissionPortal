@@ -124,19 +124,22 @@ if(isset($_POST['register_student']))
 
 }
 
-if(isset($_POST['form_btn'])){         // starting here is the code for doc upload
-                                                                // && isset($_FILES['file'])
-    // $fileName = $_FILES['file']['name'];
-    // // for($i=0;$i<$fileCount;$i++){
-    //     // $fileName = $_FILES['file']['name'][$i];
-    //     $sql= "INSERT INTO fileup(title, img) VALUES('$fileName', '$fileName')";
-    //     $query_file = mysqli_query($con, $sql);
-        
-    // // $filetemp = $_FILES['file']['tmp_name'];
-    // move_uploaded_file($_FILES['file']['tmp_name'], 'upload/'.$fileName); //['tmp_name']
-    // // }
+if(isset($_POST['form_btn'])){        
+    // && isset($_FILES['file'])
+    $title = $_POST["title"];
+    $pname = $_FILES["file"]["name"];      //rand(1000,10000)."-".
+    $tname = $_FILES["file"]["tmp_name"];
 
-    //Till here
+// $uploads_dir = 'images/';
+
+    move_uploaded_file($tname,'upload/'.$pname); // .'/'.$pname
+    $sql = "INSERT INTO fileup(title, img) VALUES('$title','$pname')";
+
+    mysqli_query($con, $sql);
+
+//Till here
+
+
     $id = $_SESSION['auth_user']['user_id'];
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $dob = mysqli_real_escape_string($con, $_POST['dob']);

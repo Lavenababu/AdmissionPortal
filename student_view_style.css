@@ -149,3 +149,27 @@ form .fields .input-detail{
     background: #fff;
     transform: scale(1.1);
 }
+.doc{
+    text-decoration: none;
+    color: black !important;
+}
+.btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #646464;
+    color: white;
+    float: left;
+    margin-right: 15px;
+  }
+  
+  .btn:hover {
+    background-color: #fff;
+    border: 1px solid #646464;
+    color: #646464;
+  }
+  
+  .back-btn{
+    float: right;
+    margin-bottom: 15px;
+  }

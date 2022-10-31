@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'partials/_dbconnect.php'
 ?>
 
@@ -44,11 +45,13 @@ require 'partials/_dbconnect.php'
             </thead>
             <tbody>
                 <?php
-                $query = "SELECT * FROM users";
+                $query = "SELECT * FROM users where u_role=0";
                 $query_run = mysqli_query($con, $query);
-
+                // global $id ;
                 if (mysqli_num_rows($query_run) > 0) {
                     foreach ($query_run as $student) {
+                        $_SESSION['stud_id'] = $student['u_ID'];
+                        // $id=$student['u_ID'];
                 ?>
                         <tr>
                             <td><?= $student['u_ID']; ?></td>
@@ -57,9 +60,9 @@ require 'partials/_dbconnect.php'
                             <td><?= $student['u_username']; ?></td>
                             <td><?= $student['u_application']; ?></td>
                             <td>
+                                
                                 <a href="student_view.php?id=<?= $student['u_ID']; ?>" class="btn view-btn">View</a>
-                                <a href="student_view.php?id=<?= $student['u_ID']; ?>" class="btn delete-btn">Delete</a>
-                                <a href="student-view.php?id=<?= $student['u_ID']; ?>" class="btn update-btn">Update</a>
+
                             </td>
 
                         </tr>

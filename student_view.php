@@ -10,15 +10,17 @@ require 'partials/_dbconnect.php'
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student details</title>
-    <link rel="stylesheet" href="student_view_style.css?v2" />
+    <link rel="stylesheet" href="student_view_style.css?v3" />
     <!-- <link rel="stylesheet" href="admission_style.css"> -->
 </head>
 
 <body>
 <?php
-    $query = "SELECT * FROM personal_details";
+    // $id = $_SESSION['stud_id'];
+    $query = "SELECT * FROM personal_details where u_ID='5'";
     // WHERE u_email="  "
     $query_run = mysqli_query($con, $query);
+
     if (mysqli_num_rows($query_run) > 0) {
         foreach ($query_run as $usertable) {
 ?>
@@ -26,7 +28,10 @@ require 'partials/_dbconnect.php'
 
     <div class="header">
         <h2>Student Information details</h2>
-        <button>Back</button>
+        <!-- <button>Back
+            <a href=""></a>
+        </button> -->
+        <a href="adminview.php" class="btn back-btn">&laquo; Back</a>
     </div>
     <div class="container">
         <!-- Container with photo and name -->
@@ -57,7 +62,7 @@ require 'partials/_dbconnect.php'
 
                         <div class="input-field">
                             <label>Mobile Number</label>
-                            <input type="number" name="mobileno" value="<?= $usertable['u_mobile']; ?>" disabled>
+                            <input type="number" name="mobileno" value="<?= $usertable['u_mobileno']; ?>" disabled>
                         </div>
 
                         <div class="input-field">
@@ -67,22 +72,33 @@ require 'partials/_dbconnect.php'
 
                         <div class="input-field">
                             <label>Branch</label>
-                            <input type="text" name="branch" value="<?= $usertable['u_class']; ?>" disabled>
+                            <input type="text" name="branch" value="<?= $usertable['u_branch']; ?>" disabled>
                         </div>
                         <div class="input-field">
-                            <label>HSC Marks</label>
-                            <input type="text" name="hscmarks" disabled>
+                            <label>Religion</label>
+                            <input type="text" name="religion" value="<?= $usertable['u_religion']; ?>" disabled>
                         </div>
                         <div class="input-field">
-                            <label>JEE/CET Marks</label>
-                            <input type="text" name="jee">
+                            <label>Caste</label>
+                            <input type="text" name="caste" value="<?= $usertable['u_caste']; ?>" disabled>
                         </div>
+                        <div class="input-field">
+                            <label>Seat Type</label>
+                            <input type="text" name="seat" value="<?= $usertable['u_seat']; ?>" disabled>
+                        </div>
+
+
                         <?php }
-                            $query = "SELECT * FROM family_details";
+                            }
+                            $query = "SELECT * FROM family_details where family_id='5'";
                             $query_run = mysqli_query($con, $query);
                             if (mysqli_num_rows($query_run) > 0) {
                                 foreach ($query_run as $usertable) {
                         ?>
+                        <div class="input-field">
+                            <label>No. of Siblings</label>
+                            <input type="text" name="sibblings_no" value="<?= $usertable['sibblings_no']; ?>" disabled>
+                        </div>
                         <div class="input-field">
                             <label>Father's Name</label>
                             <input type="text" name="fname" value="<?= $usertable['father_name']; ?>" disabled>
@@ -99,12 +115,25 @@ require 'partials/_dbconnect.php'
                             <label>Mother's Number</label>
                             <input type="text" name="mobilenumber" value="<?= $usertable['father_contact']; ?>" disabled>
                         </div>
+                        <div class="input-field">
+                            <label>Father's Designation</label>
+                            <input type="text" name="sibblings_no" value="<?= $usertable['father_designation']; ?>" disabled>
+                        </div>
+                        <div class="input-field">
+                            <label>Mother's Designation </label>
+                            <input type="text" name="sibblings_no" value="<?= $usertable['mother_designation']; ?>" disabled>
+                        </div>
+                        <div class="input-field">
+                            <label>Telephone</label>
+                            <input type="text" name="sibblings_no" value="<?= $usertable['telephone']; ?>" disabled>
+                        </div>
                     </div>
                 </div>
             </form>
         </div>
         <?php }
-            $query = "SELECT * FROM address_details";
+        }
+            $query = "SELECT * FROM address_details where address_id='5'";
             $query_run = mysqli_query($con, $query);
             if (mysqli_num_rows($query_run) > 0) {
                 foreach ($query_run as $usertable) {?>
@@ -143,14 +172,16 @@ require 'partials/_dbconnect.php'
                     <div class="fields">
                         <div class="input-file">
                             <label>Student's detail</label>
-                            <button>View</button>
+                            <button>
+                            <a href="partials\upload\IT_OralPracticalOct_2022.pdf" class="doc">View</a>
+                            </button>
                         </div>
                         <div class="input-file">
                             <label>Parent's details</label>
                             <button>View</button>
                         </div>
                     </div>
-                    <div class="fields">
+                    <!-- <div class="fields">
                         <div class="input-file">
                             <label>Student's detail</label>
                             <button>View</button>
@@ -163,16 +194,16 @@ require 'partials/_dbconnect.php'
                             <label>Parent's details</label>
                             <button>View</button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </form>
         </div>
     </div>
     <?php
-        }
-    } else{
-        echo "<h5>Student has not filled the admission form</h5>";
-    }
+        
+    // } else{
+    //     echo "<h5>Student has not filled the admission form</h5>";
+    // }
     ?>
 </body>
 

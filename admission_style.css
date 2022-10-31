@@ -222,7 +222,10 @@ form .buttons{
 form .buttons button , .backBtn{
     margin-right: 14px;
 }
-
+.buttons a{
+    text-decoration: none;
+    color: white;
+}
 @media (max-width: 750px) {
     .container form{
         overflow-y: scroll;

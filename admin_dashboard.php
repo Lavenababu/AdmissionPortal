@@ -144,7 +144,7 @@ require 'partials/_dbconnect.php'
 
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Total Filled Applications</div>
+            <div class="box-topic">Total Filled Admission Form</div>
             <?php 
                 $it_count = "SELECT * FROM users WHERE u_application='filled'";
                 $it_count_run = mysqli_query($con, $it_count);
@@ -165,7 +165,7 @@ require 'partials/_dbconnect.php'
 
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Total Unfilled Applications</div>
+            <div class="box-topic">Total Unfilled Admission Form</div>
             <?php 
                 $it_count = "SELECT * FROM users WHERE u_application IS NULL";
                 $it_count_run = mysqli_query($con, $it_count);

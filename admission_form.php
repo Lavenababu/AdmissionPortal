@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="admission_style.css?v4">
+    <link rel="stylesheet" href="admission_style.css?v5">
 
     <title>Addmission Form </title> 
 </head>
@@ -20,16 +20,6 @@
         <header>Admission form</header>
 
         <form action="partials/_code.php" method="post" enctype="multipart/form-data">
-
-            <!-- Progress Bar -->
-            <!-- <div class="progressbar">
-                <div class="progress" id="progress"></div>
-                <div class="progress-step progress-step-active" data-title="Part1"></div>
-                <div class="progress-step" data-title="Part2"></div>
-                <div class="progress-step" data-title="Part3"></div>
-                <div class="progress-step" data-title="Part4"></div>
-            </div> -->
-            <!-- End of Progress Bar -->
 
             <div class="form first form-step-active">
                 <div class="details personal">
@@ -124,7 +114,7 @@
                         <!-- Till here -->
                         <div class="input-field">
                             <label>Upload Your Document<span class="star">*</span></label>
-                                <input class="upload-doc" type="file" name="file" id= "file" accept=".pdf" required>          <!-- name='file[]' -->
+                                <input class="upload-doc" type="file" name="file" accept=".pdf" required>          <!-- name='file[]' -->
                         </div>
 
                         <div class="input-field">
@@ -173,10 +163,16 @@
                         </div>
                     </div>
                 </div>
+                <!-- <div class="buttons">                     -->
                     <button class="nextBtn">
                         <span class="btnText">Next</span>
                         <i class="uil uil-navigator"></i>
                     </button>
+                    <!-- <button onclick="home_page.php">Back</button> -->
+                        <!-- <a href="home_page.php" class="btnText">Back</a> -->
+                    
+                <!-- </div> -->
+
             </div>
 
             <div class="form second">

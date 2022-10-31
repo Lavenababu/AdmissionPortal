@@ -18,15 +18,6 @@
       <h2>Registration</h2>
 
       <form id="form" name="form" action="partials/_code.php" method="POST">
-        
-          <!-- <p>    
-          <label for="username">Username</label>
-          <input type="text" id="name" name="name" placeholder="Name" required><i class="validation"><span></span><span></span></i><br><br>
-          <input type="text" id="email" name="email" placeholder="Email" required><i class="validation"><span></span><span></span></i><br><br>
-          <input type="text" id="username" name="username" placeholder="Username" required><i class="validation"><span></span><span></span></i><br><br>
-          <input type="password" id="pass" name="pass" placeholder="Password" required><i class="validation"><span></span><span></span></i><br><br>
-          <input type="password" id="c_pass" name="c_pass" placeholder="Comfirm Password" required><i class="validation"><span></span><span></span></i>
-          </p> -->
 
           <div class="form-control">
             <label for="name">Name</label>
